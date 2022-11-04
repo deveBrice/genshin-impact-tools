@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { MaterialsModule } from './materials/materials.module';
 import { NavigationComponent } from './navigation/navigation.component';
 
@@ -6,7 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
   declarations: [
     NavigationComponent
   ],
-  imports: [MaterialsModule],
+  imports: [BrowserModule, MaterialsModule],
   providers: [],
   exports: [
     NavigationComponent,
