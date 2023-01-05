@@ -9,3 +9,11 @@ html, body {
     margin: 0;
     height: 100%;
 }
+
+.side-menu-content a {
+    color: red;
+}
+
+.mat-card-header-text {
+    @apply m-0 #{!important};
+}

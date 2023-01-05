@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+///import { NavigationModule } from 'src/shared-global/navigation/navigation.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import  { SharedGlobalModule } from '../shared-global/shared-global.module'
 
 
 @NgModule({
@@ -13,9 +12,9 @@ import  { SharedGlobalModule } from '../shared-global/shared-global.module'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    SharedGlobalModule
+    AppRoutingModule,
+  //  NavigationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

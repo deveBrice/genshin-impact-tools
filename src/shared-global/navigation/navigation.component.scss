@@ -1,3 +1,7 @@
+.toolbar-custom .mat-toolbar-row, .mat-toolbar-single-row {
+  @apply pl-6px;
+}
+
 .sidenav-container {
    //height: 93%;
    // border: 1px solid rgba(0, 0, 0, 0.5);
@@ -30,4 +34,15 @@
  /* .sidenav-content {
     display: initial;
   }*/
-  
+
+.current-link {
+   @apply text-white-content
+}
+
+ .current-link.active {
+   @apply text-router-active;
+}
+
+.round-button {
+  @apply rounded-full ml-5
+}
