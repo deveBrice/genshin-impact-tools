@@ -1,0 +1,35 @@
+.character-list-content {
+  @apply flex flex-wrap xs:justify-center sm:justify-start;
+}
+
+.character {
+    @apply flex-1 max-w-250 max-h-250 rounded-card bg-dark-content m-10 drop-shadow-purple;
+}
+
+.card-header-content {
+    @apply flex justify-between w-full;
+}
+
+.character-picture img {
+    @apply m-auto;
+}
+
+.card-content {
+    @apply text-center;
+}
+
+.character-name h1 {
+    @apply text-2xl text-electro-color;
+}
+
+.rarety {
+    @apply text-3xl; 
+}
+
+.rarety span {
+   @apply text-3xl text-rarety-color;
+}
+
+.location h3 {
+    @apply text-base text-white;
+}

@@ -1,24 +1,28 @@
-<mat-toolbar class="bg-dark-content">
+<mat-toolbar class="bg-dark-content toolbar-custom">
     <button mat-icon-button class="bg-cyan-500" aria-label="Example icon-button with menu icon">
         <mat-icon class="text-white-content" (click)="sidenav.toggle()">menu</mat-icon>
     </button>
     <span class="text-white-content font-arimo">Genshin impact tools</span>
+    <button mat-raised-button (click)="addCharacter()" class="round-button">Ajouter un personnage</button>
 </mat-toolbar>
 
 <mat-sidenav-container class="h-93p">
   <mat-sidenav #sidenav class="min-w-200px bg-dark-content">
     <div class="side-menu-container">
-      <div class="side-menu-content" *ngFor="let sm of sideMenu">
+      <div class="side-menu-content" *ngFor="let rl of routerList">
         <mat-nav-list color="primary" class="nav-list-custom">
-          <a mat-list-item>
-            <img [src]="sm.icon" [alt]="sm.name" class="mb-6px mr-7px ">
-            <span class="text-white-content font-arimo">{{sm.name}}</span>
+          <a mat-list-item [routerLink]="[rl.path]"
+          routerLinkActive="active"
+          (click)="sidenav.toggle()"
+           class="current-link">
+            <img [src]="rl.icon" [alt]="rl.name" class="mb-6px mr-7px ">
+            <span class="font-arimo" >{{rl.name}}</span>
          </a>
         </mat-nav-list>
       </div>
     </div>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
-
+       <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
