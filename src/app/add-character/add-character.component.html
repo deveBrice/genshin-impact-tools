@@ -1,1 +1,91 @@
-<p>add-character works!</p>
+<div class="add-character-form-container">
+    <div class="add-character-form-content custom-scroll-bar">
+        
+       <form [formGroup]="addCharacterForm" (ngSubmit)="createCharacter()" autocomplete="off">
+            <div class="character-picture-header">
+                <img *ngIf="characterImage" [src]="characterImage" class="image">
+            </div>
+            <mat-form-field>
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field class="character-picture">
+                <mat-label>Image du personnage</mat-label>
+                    <div class="upload-picture-edit">
+                        <input type="file" accept=".png, .jpg, .jpeg" #uploadCharacterPicture
+                            (change)="uploadPicture($event,  'character')" />
+                    </div>
+                <input matInput formControlName="picture">
+                <button mat-mini-fab (click)="characterPicture(uploadCharacterPicture, $event)" matSuffix> <img
+                        src="assets/imgs/logo/picture-logo.png" alt="picture logo"></button>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Text alternatif du personnage</mat-label>
+                <input matInput formControlName="alt">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Localisation</mat-label>
+                <mat-select formControlName="location">
+                    <mat-option *ngFor="let ll of locationsList" [value]="ll">{{ll}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Rareté</mat-label>
+                <mat-select formControlName="rarety">
+                    <mat-option *ngFor="let rl of raretiesList" [value]="rl">{{rl}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Couleur</mat-label>
+                <mat-select formControlName="color">
+                    <mat-option *ngFor="let cl of colorsList" [value]="cl.color">{{cl.name}} - {{cl.color}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div formGroupName="weapon" class="groupName">
+                <mat-form-field>
+                    <mat-label>Logo arme</mat-label>
+                    <div class="upload-picture-edit">
+                        <input type="file" accept=".png, .jpg, .jpeg" #uploadWeaponPicture
+                            (change)="uploadPicture($event, 'weapon')" />
+                    </div>
+                    <button mat-mini-fab (click)="weaponPicture(uploadWeaponPicture, $event)" matSuffix> <img src="assets/imgs/logo/picture-logo.png"
+                        alt="picture logo"></button>
+                    <input matInput formControlName="picture" >
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Text alternatif de l'arme</mat-label>
+                    <input matInput formControlName="alt">
+                </mat-form-field>
+            </div>
+
+            <div formGroupName="element" class="groupName">
+                <mat-form-field>
+                    <mat-label>Logo element</mat-label>
+                    <div class="upload-picture-edit">
+                        <input type="file" accept=".png, .jpg, .jpeg" #uploadElementPicture
+                            (change)="uploadPicture($event, 'element')" />
+                    </div>
+
+                    <input matInput formControlName="picture">
+                    <button mat-mini-fab (click)="elementPicture(uploadElementPicture, $event)" matSuffix> <img src="assets/imgs/logo/picture-logo.png"
+                            alt="picture logo"></button>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Text alternatif de l'element</mat-label>
+                    <input matInput formControlName="alt">
+                </mat-form-field>
+            </div>
+            <div class="create-character-button">
+                <button type="submit" mat-raised-button [ngClass]="addCharacterForm.valid ? 'custom-button' : ''" [disabled]="!addCharacterForm.valid">Création</button>
+            </div>
+        </form>
+    </div>
+</div>

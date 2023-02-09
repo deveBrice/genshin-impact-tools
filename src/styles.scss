@@ -8,6 +8,7 @@
 html, body {
     margin: 0;
     height: 100%;
+    overflow: hidden;
 }
 
 .side-menu-content a {
@@ -17,3 +18,26 @@ html, body {
 .mat-card-header-text {
     @apply m-0 #{!important};
 }
+
+.add-character-form-content {
+    .mat-button-wrapper {
+        @apply pt-5px #{!important};
+    } 
+}
+
+.custom-scroll-bar::-webkit-scrollbar {
+    width: 17px
+}
+
+.custom-scroll-bar::-webkit-scrollbar-track {
+    border-radius: 20px;
+    height: 90%;
+}
+
+.custom-scroll-bar::-webkit-scrollbar-thumb {
+    border: 4px solid rgba(0,0,0,0);
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: #AAAAAA;
+}
+         

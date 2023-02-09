@@ -19,6 +19,7 @@ module.exports = {
       'dark-content': '#32373D',
       'white-content': '#ADB4BC',
       'router-active': '#005BC5',
+      'color-button': '#005BC5',
       'electro-color': '#9955CC',
       'rarety-color': '#FFEE4A',
       transparent: 'transparent',
@@ -31,16 +32,20 @@ module.exports = {
       'silver': '#ecebff',
       'bubble-gum': '#ff77e9',
       'bermuda': '#78dcca',
+      'blue-content': '#B3CEEE',
       'light-blue': colors.lightBlue,
     },
     extend: {
         height: {
           '128': '32rem',
           '93p' : '93%',
-          '62.5': '15.625rem'
+          '62.5': '15.625rem',
+          '120': '7.5rem'
         },
         width: {
          '62.5': '15.625rem',
+         '100px' : '6.25rem',
+         '120': '7.5rem'
         },
 
         margin: {
@@ -52,6 +57,7 @@ module.exports = {
 
         padding: {
           '6px': '6px',
+          '5px': '0.313rem'
         },
         dropShadow: {
           'purple': '0 4px 0px rgba(153, 85, 204, 0.75)',
@@ -108,6 +114,8 @@ module.exports = {
     },
     maxWidth: {
       '250': '15.625rem',
+      '300': '18.75rem',
+      '500': '31.25rem',
     },
   },
   plugins: [],
