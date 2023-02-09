@@ -7,6 +7,7 @@ import { SharedGlobalModule } from 'src/shared-global/shared-global.module';
 import { HomeComponent } from './home/home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AddCharacterComponent } from './add-character/add-character.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: '', redirectTo: 'Accueil', pathMatch: 'full'},
@@ -16,17 +17,19 @@ const routes: Routes = [
   {path: "Artefacts", component: HomeComponent},
   {path: "Matériaux", component: HomeComponent},
   {path: "Théorycraft", component: HomeComponent},
-  {path: "Ajouter_un_personnage", component: HomeComponent },
+  {path: "Ajouter_un_personnage", component: AddCharacterComponent },
   {path: '**', redirectTo: 'Accueil', pathMatch: 'full'},
 ];
 
 @NgModule({
   imports: [
     SharedGlobalModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],
-  declarations: [NavigationComponent, CharacterListComponent],
-  exports: [RouterModule, NavigationComponent]
+  declarations: [NavigationComponent, HomeComponent, CharacterListComponent, AddCharacterComponent],
+  exports: [RouterModule, NavigationComponent, SharedGlobalModule]
 })
 
 

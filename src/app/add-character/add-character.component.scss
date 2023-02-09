@@ -1,0 +1,40 @@
+.add-character-form-container {
+ //   @apply flex justify-center items-center;
+}
+
+.add-character-form-content  {
+  //  @apply flex-1;
+  height: 778px;
+  overflow-x: scroll;
+    form {
+        @apply flex flex-col max-w-500 p-3 border border-2 rounded-card bg-blue-content m-auto;
+        
+        .groupName {
+            @apply flex flex-col;
+        }
+    }    
+}
+
+.character-picture-header {
+    @apply w-120 h-120 border-solid border border-2 rounded-full m-auto;
+}
+
+.upload-picture-edit {
+    @apply hidden;
+}
+
+.create-character-button {
+   @apply m-auto;
+
+    button {
+        @apply w-62.5 rounded-full;
+    }
+}
+
+.custom-button {
+    @apply bg-color-button text-white;
+}
+
+
+
+
