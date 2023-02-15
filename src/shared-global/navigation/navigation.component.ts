@@ -56,6 +56,10 @@ export class NavigationComponent implements OnInit {
    this.router.navigate(['/Ajouter_un_personnage'])
  }
 
+ public signIn() {
+  this.router.navigate(['/Connexion'])
+ }
+
 
 
   /*public sideMenu: any[] = [

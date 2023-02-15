@@ -36,7 +36,7 @@
   }*/
 
 .current-link {
-   @apply text-white-content
+   @apply text-white-content;
 }
 
  .current-link.active {
@@ -45,4 +45,8 @@
 
 .round-button {
   @apply rounded-full ml-5
+}
+
+.header-group-button {
+  @apply w-full flex justify-between;
 }

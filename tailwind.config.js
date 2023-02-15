@@ -24,7 +24,7 @@ module.exports = {
       'rarety-color': '#FFEE4A',
       transparent: 'transparent',
       current: 'currentColor',
-      'white': '#ffffff',
+      'white': '#FFFFFF',
       'purple': '#3f3cbb',
       'midnight': '#121063',
       'metal': '#565584',
@@ -33,6 +33,7 @@ module.exports = {
       'bubble-gum': '#ff77e9',
       'bermuda': '#78dcca',
       'blue-content': '#B3CEEE',
+      'form-color': '#00ACC1',
       'light-blue': colors.lightBlue,
     },
     extend: {
@@ -40,7 +41,8 @@ module.exports = {
           '128': '32rem',
           '93p' : '93%',
           '62.5': '15.625rem',
-          '120': '7.5rem'
+          '120': '7.5rem',
+          '40': '2.5rem'
         },
         width: {
          '62.5': '15.625rem',
@@ -57,10 +59,12 @@ module.exports = {
 
         padding: {
           '6px': '6px',
-          '5px': '0.313rem'
+          '5px': '0.313rem',
+          '20': '1.25rem'
         },
         dropShadow: {
           'purple': '0 4px 0px rgba(153, 85, 204, 0.75)',
+          'cyan': '0 4px 0px rgba(0, 172, 193, 0.75)',
         },
 
         flex: {
@@ -70,6 +74,7 @@ module.exports = {
     },
     minHeight: {
       '200px': '200px',
+      '446': '27.875'
     },
     maxHeight: {
       '250': '15.625rem',
@@ -78,7 +83,7 @@ module.exports = {
       'arimo': ['"Arimo"', 'sans-serif']
     },
     fontSize: {
-      '16px': '16px'
+      '16px': '16px',
     },
     fontWeight: {
       hairline: 100,
@@ -107,15 +112,19 @@ module.exports = {
     fontSize: {
       'base': '1rem',
       '2xl': '1.563rem',
-      '3xl': '1.953rem'
+      '3xl': '1.953rem',
+      '24': '1.5rem'
+
     },
     minWidth: {
       '200px': '200px',
+      '250': '15.625rem'
     },
     maxWidth: {
       '250': '15.625rem',
       '300': '18.75rem',
       '500': '31.25rem',
+      '350': '21.875rem',
     },
   },
   plugins: [],
