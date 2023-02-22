@@ -1,29 +1,21 @@
-<div class="sign-in-container">
-    <div class="sign-in-content">
-        <div class="header-sign-up-form">
-            <div class="switch-autthenticate">
-                <div class="group-button">
-                    <button class="mat-flat-button">Inscription</button>
-                    <button class="mat-flat-button">Connexion</button>
-                </div>
-            </div>
-            <div class="sign-up-title">
-                <h1>Connexion</h1>
-            </div>
-        </div>
-        <form [formGroup]="signInForm" autocomplete="off" (ngSubmit)="signIn()">
-              <mat-form-field appearance="fill">
-                <mat-label>Pseudo</mat-label>
-                <input matInput formControlName="pseudo">
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Mot de passe</mat-label>
-                <input matInput formControlName="password" type="password">
-              </mat-form-field>
-              <div class="connexion-button">
-                <button type="submit" class="mat-raised-button">Connexion</button>
-              </div>
-        </form>
+
+
+
+<div class="header-sign-up-form">
+    <div class="sign-up-title">
+        <h1>Connexion</h1>
     </div>
 </div>
-
+    <form [formGroup]="signInForm" autocomplete="off" (ngSubmit)="signIn()">
+      <mat-form-field appearance="fill">
+        <mat-label>Pseudo</mat-label>
+        <input matInput formControlName="pseudo">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Mot de passe</mat-label>
+        <input matInput formControlName="password" type="password">
+      </mat-form-field>
+      <div class="connexion-button">
+        <button type="submit" class="mat-raised-button">Connexion</button>
+      </div>
+</form>

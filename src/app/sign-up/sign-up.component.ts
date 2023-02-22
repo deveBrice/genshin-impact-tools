@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,9 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 
 export class SignUpComponent implements OnInit {
+
 public signUpForm: FormGroup;
+@Input() accountSettings: any = {};
 
   constructor(private fb: FormBuilder) { }
 
@@ -20,7 +22,8 @@ public signUpForm: FormGroup;
     this.signUpForm = this.fb.group({
       email: [''],
       pseudo: [''],
-      password: ['']
+      password: [''],
+      confirmPassord: ['']
     })
   }
 

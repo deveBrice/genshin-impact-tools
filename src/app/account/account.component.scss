@@ -1,6 +1,12 @@
+.sign-in-container {
+    @apply min-h-[calc(100vh-14px-50px)] border-solid flex justify-center items-center;
+}
 
+.sign-in-content {
+    @apply max-w-350 min-h-446 bg-dark-content rounded-card flex-1 p-20 drop-shadow-cyan;
 
-.header-sign-up-form {
+    .header-sign-up-form {
+     
         .sign-up-title {
             h1 {
                 @apply text-center text-white text-24;
@@ -9,7 +15,7 @@
         .group-button {
             @apply flex justify-between;
             button {
-                @apply bg-dark-content text-form-color rounded-full;
+                @apply bg-dark-content rounded-full;
             }
         }
     }
@@ -23,12 +29,16 @@
             @apply text-form-color;
         }
     }
-
+}
 
 .connexion-button {
     @apply flex justify-center;
     button {
         @apply rounded-full min-w-250 h-40 bg-form-color text-dark-content;
     }
+}
+
+.sign-in {
+    width: 100%
 }
 

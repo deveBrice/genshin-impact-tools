@@ -1,36 +1,24 @@
-<div class="sign-up-container">
-    <div class="sign-up-content">
-        <div class="header-sign-up-form">
-            <div class="switch-autthenticate">
-                <div class="group-button">
-                    <button class="mat-flat-button">Inscription</button>
-                    <button class="mat-flat-button">Connexion</button>
-                </div>
-            </div>
-            <div class="sign-up-title">
-                <h1>Inscription</h1>
-            </div>
-        </div>
-        <form [formGroup]="signUpForm" autocomplete="off" (ngSubmit)="signUp()">
-            <mat-form-field appearance="fill">
-                <mat-label>Email</mat-label>
-                <input matInput formControlName="email" type="email">
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Pseudo</mat-label>
-                <input matInput formControlName="pseudo">
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Mot de passe</mat-label>
-                <input matInput formControlName="password" type="password">
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Confirmation du mot de passe</mat-label>
-                <input matInput formControlName="password" type="password">
-              </mat-form-field>
-              <div class="connexion-button">
-                <button type="submit" class="mat-raised-button">Valider</button>
-              </div>
-        </form>
-    </div>
+<div class="sign-up-title">
+  <h1>Inscription</h1>
 </div>
+<form [formGroup]="signUpForm" autocomplete="off" (ngSubmit)="signUp()">
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Pseudo</mat-label>
+    <input matInput formControlName="pseudo">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Mot de passe</mat-label>
+    <input matInput formControlName="password" type="password">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Confirmation du mot de passe</mat-label>
+    <input matInput formControlName="password" type="password">
+  </mat-form-field>
+  <div class="connexion-button">
+    <button type="submit" class="mat-raised-button">Valider</button>
+  </div>
+</form>

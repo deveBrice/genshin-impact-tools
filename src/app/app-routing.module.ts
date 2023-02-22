@@ -9,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AddCharacterComponent } from './add-character/add-character.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { AccountComponent } from './account/account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: "Théorycraft", component: HomeComponent},
   {path: "Ajouter_un_personnage", component: AddCharacterComponent },
   {path: "Inscription", component: SignUpComponent},
-   {path: "Connexion", component: SignInComponent},
+  {path: "Connexion", component: SignInComponent},
+  {path: "Account", component: AccountComponent},
   {path: '**', redirectTo: 'Accueil', pathMatch: 'full'},
 ];
 
@@ -38,7 +40,8 @@ const routes: Routes = [
                  CharacterListComponent, 
                  AddCharacterComponent, 
                  SignUpComponent, 
-                 SignInComponent
+                 SignInComponent,
+                 AccountComponent
                 ],
   exports: [RouterModule, 
             NavigationComponent, 

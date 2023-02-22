@@ -1,12 +1,4 @@
-.sign-up-container {
-    @apply min-h-[calc(100vh-14px-50px)] border-solid flex justify-center items-center;
-}
 
-.sign-up-content {
-    @apply max-w-350 min-h-446 bg-dark-content rounded-card flex-1 p-20 drop-shadow-cyan;
-
-    .header-sign-up-form {
-     
         .sign-up-title {
             h1 {
                 @apply text-center text-white text-24;
@@ -18,7 +10,7 @@
                 @apply bg-dark-content text-form-color rounded-full;
             }
         }
-    }
+    
     form {
         @apply flex flex-col;
     }
@@ -29,7 +21,7 @@
             @apply text-form-color;
         }
     }
-}
+
 
 .connexion-button {
     @apply flex justify-center;
