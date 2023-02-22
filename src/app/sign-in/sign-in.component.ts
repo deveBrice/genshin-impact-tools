@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 
 export class SignInComponent implements OnInit {
   public signInForm: FormGroup;
+  public accountSettings: any = {}
 
   constructor(private fb: FormBuilder) { }
 
@@ -21,6 +22,7 @@ export class SignInComponent implements OnInit {
       pseudo: [''],
       password: ['']
     })
+   
   }
 
   public signIn() {

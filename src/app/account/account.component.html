@@ -1,0 +1,19 @@
+<div class="sign-in-container">
+    <div class="sign-in-content">
+        <div class="header-sign-up-form">
+            <div class="switch-autthenticate">
+                <div class="group-button">
+                    <button class="mat-flat-button" (click)="signUp()" [ngStyle]="{'color': accountSettings.signUp ? '#00ACC1' : 'white' }">Inscription</button>
+                    <button class="mat-flat-button" (click)="signIn()" [ngStyle]="{'color': accountSettings.signIn ? '#00ACC1' : 'white' }">Connexion</button>
+                </div>
+            </div>
+        </div>
+        <div class="sign-in" *ngIf="accountSettings.signIn">
+          <app-sign-in [accountSettings]="accountSettings"></app-sign-in>
+        </div>
+        <div class="sign-up" *ngIf="accountSettings.signUp">
+          <app-sign-up [accountSettings]="accountSettings"></app-sign-up>
+        </div>
+    </div>
+</div>
+

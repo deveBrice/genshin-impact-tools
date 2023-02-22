@@ -57,7 +57,7 @@ export class NavigationComponent implements OnInit {
  }
 
  public signIn() {
-  this.router.navigate(['/Connexion'])
+  this.router.navigate(['/Account'])
  }
 
 
