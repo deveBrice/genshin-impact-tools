@@ -42,7 +42,7 @@ html, body {
 }
 
 //sign-up.component
-.sign-up-content {
+.account-content {
     .mat-form-field.mat-focused .mat-form-field-ripple {
         background-color: #00ACC1 !important;
     }
@@ -65,7 +65,7 @@ html, body {
 }
 
 //sign-in.component
-.sign-in-content {
+.account-content {
     .mat-form-field.mat-focused .mat-form-field-ripple {
         background-color: #00ACC1 !important;
     }
@@ -85,10 +85,12 @@ html, body {
     mat-form-field.mat-form-field {
         color:white;
         width: 100%;
+        font-size: 14px;
+    }
+
+    .account-title {
+        h1 {
+           @apply text-center text-white text-24 #{!important};
+        }
     }
 }
-
-
-
-
-

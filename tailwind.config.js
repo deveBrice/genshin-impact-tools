@@ -70,6 +70,9 @@ module.exports = {
         flex: {
           '2': '2 2 0%',
           '1': '1 0 auto'
+        },
+        cursor: {
+          'fancy': 'url(hand.cur), pointer',
         }
     },
     minHeight: {

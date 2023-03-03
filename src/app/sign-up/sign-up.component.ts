@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 
 export class SignUpComponent implements OnInit {
 
-public signUpForm: FormGroup;
+public signUpForm: any = {};
 @Input() accountSettings: any = {};
 
   constructor(private fb: FormBuilder) { }
@@ -18,17 +18,28 @@ public signUpForm: FormGroup;
      this.displaySignUpForm();
   }
 
-  public displaySignUpForm() {
-    this.signUpForm = this.fb.group({
-      email: [''],
-      pseudo: [''],
-      password: [''],
-      confirmPassord: ['']
+  public  displaySignUpForm() {
+    const signUpSetting = ({
+        name: 'signUp',
+        title: 'Inscription',
+        signUpForm: {
+          email: [''],
+          pseudo: [''],
+          password: [''],
+          confirmPassword: ['']
+        },
+        textButton: 'Valider'
     })
+    this.signUpForm = signUpSetting;
   }
 
   public signUp() {
+    const password = this.signUpForm.get('password').value;
+    const confirmPassord = this.signUpForm.get('confirmPassord').value
     console.log(this.signUpForm)
+    if(password === confirmPassord) {
+  
+    }
   }
 
 }

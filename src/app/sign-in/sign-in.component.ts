@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 
 export class SignInComponent implements OnInit {
-  public signInForm: FormGroup;
+  public signInForm: any;
   public accountSettings: any = {}
 
   constructor(private fb: FormBuilder) { }
@@ -22,8 +22,17 @@ export class SignInComponent implements OnInit {
       pseudo: [''],
       password: ['']
     })
-   
-  }
+    const signInSetting = {
+      name: 'signIn',
+      title: 'Connexion',
+      signInForm: {
+        pseudo: [''],
+        password: ['']
+      },
+      textButton: 'Connexion'
+    }
+    this.signInForm = signInSetting;
+  }  
 
   public signIn() {
     console.log(this.signInForm.value)
