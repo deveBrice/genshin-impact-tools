@@ -14,12 +14,12 @@
             <h1>{{ account.title }}</h1>
         </div>
         <form [formGroup]="accountForm" autocomplete="off" (ngSubmit)="validateForm()">
-            <mat-form-field appearance="fill" *ngIf="account.signUpForm">
+            <mat-form-field appearance="fill">
                 <mat-label>Email</mat-label>
                 <input matInput formControlName="email" type="email">
             </mat-form-field>
           
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" *ngIf="account.signUpForm">
                 <mat-label>Pseudo</mat-label>
                 <input matInput formControlName="pseudo">
             </mat-form-field>

@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'genshin-impact-tools';
+  public title = 'genshin-impact-tools';
+  
+  constructor() { }
+
+  ngOnInit() {
+
+  }
 }

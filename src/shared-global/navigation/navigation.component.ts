@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth/auth.service';
+import { Subscription } from 'rxjs';
+//import { SocialUser } from '@abacritt/angularx-social-login';
 
 @Component({
   selector: 'app-navigation',
@@ -10,14 +13,14 @@ import { Router } from '@angular/router';
 export class NavigationComponent implements OnInit {
 
   public sideMenu: any[] = [];
-  constructor(private router: Router) {
-    // console.log(this.router.config)
-    //this.sideMenu = this.router.config
-  }
+  //public user: SocialUser;
+  public authResult: boolean;
+  public subscription: Subscription;
+  
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
-   /* this.displayRouting();
-    this.addIcons();*/
+     this.userState();
   }
 
   public routerList: any[] = [
@@ -29,48 +32,29 @@ export class NavigationComponent implements OnInit {
     {name: "Théorycraft", path: "/Theorycraft", icon: "assets/imgs/teorycraft-icon.png"}
   ]
 
- /* public displayRouting() {
-    const sideMenu: any[] = [];
-    this.router.config.filter((res) => {
-      if (res.path !== "" && res.path !== "**") {
-        sideMenu.push(res)
-      }
-    })
-    this.sideMenu = sideMenu;
-  }
 
- public addIcons() {
-  const sideMenu: any[] = [];
-  this.iconsList.filter((ai) => {
-    this.sideMenu.filter((sm) => {
-      if(sm.path === ai.name) {
-        sideMenu.push({...sm, icon:ai.icon})
-      }
-    })
-  })
-  console.log(this.sideMenu)
-  this.sideMenu = sideMenu;
- }*/
 
  public addCharacter() {
    this.router.navigate(['/Ajouter_un_personnage'])
  }
 
  public signIn() {
+ // this.user = this.authService.user;
   this.router.navigate(['/Connexion'])
  }
 
+ public userState() {
+  this.subscription = this.authService.authChanged.subscribe((auth: boolean) => {
+      this.authResult = auth;
+  })
+}
 
+ public signOut() {
+   this.authService.logout();
+   this.router.navigate(['/Connexion'])
+ }
 
-  /*public sideMenu: any[] = [
-    { name: 'Accueil', path: '/home', icon: 'assets/imgs/home-icon.png' },
-    { name: 'Personnages', path: '/themes', icon: 'assets/imgs/character-icon.png' },
-    { name: 'Armes', path: '/weapons', icon: 'assets/imgs/weapon-icon.png' },
-    { name: 'Artefacts', path: '/artefacts', icon: 'assets/imgs/artefact-icon.png' },
-    { name: 'Matériaux', path: '/materials', icon: 'assets/imgs/material-icon.png' },
-    { name: 'Théorycraft', path: '/theorycraft', icon: 'assets/imgs/teorycraft-icon.png' },
-  ];*/
-
-
-
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

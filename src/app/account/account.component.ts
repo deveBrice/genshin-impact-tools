@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PasswordValidator } from 'src/shared-global/services/Validators/password-validator.service';
+import { AuthService } from 'src/shared-global/services/auth/auth.service';
 
 @Component({
   selector: 'app-account',
@@ -13,17 +14,20 @@ export class AccountComponent implements OnInit, OnChanges {
 
   @Input() public account: any = {};
   public accountForm: FormGroup;
-
+  public formName: any = {};
+  
   constructor(private fb: FormBuilder, 
               private router: Router, 
               private ar: ActivatedRoute, 
-              private passwordValidator: PasswordValidator) { }
+              private passwordValidator: PasswordValidator,
+              private authService: AuthService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
 
     const accountSetting = changes.account.currentValue;
     switch(accountSetting.name){
       case'signUp':
+        this.formName = accountSetting.name;
         this.accountForm = this.fb.group(
           accountSetting.signUpForm, 
           {validator: this.passwordValidator.confirmPasswordValidator("password", "confirmPassword")
@@ -31,6 +35,7 @@ export class AccountComponent implements OnInit, OnChanges {
         this.inputValidator(accountSetting.signUpForm)
         break;
       case 'signIn':
+        this.formName = accountSetting.name;
         this.accountForm = this.fb.group(accountSetting.signInForm);
         this.inputValidator(accountSetting.signInForm)
         break;
@@ -58,6 +63,15 @@ export class AccountComponent implements OnInit, OnChanges {
   }
 
   public validateForm() {
-    console.log(this.accountForm)
+    switch(this.formName) {
+       case 'signUp':
+        console.log(this.accountForm)
+        this.authService.createUser(this.accountForm.value).subscribe();
+        break;
+        case 'signIn':
+        console.log(this.accountForm)
+        this.authService.loginUser(this.accountForm.value)
+        break;
+    }
   }
 }

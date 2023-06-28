@@ -19,7 +19,7 @@ public signUpForm: any = {};
   }
 
   public  displaySignUpForm() {
-    const signUpSetting = ({
+    const signUpSetting: any = ({
         name: 'signUp',
         title: 'Inscription',
         signUpForm: {
@@ -32,14 +32,4 @@ public signUpForm: any = {};
     })
     this.signUpForm = signUpSetting;
   }
-
-  public signUp() {
-    const password = this.signUpForm.get('password').value;
-    const confirmPassord = this.signUpForm.get('confirmPassord').value
-    console.log(this.signUpForm)
-    if(password === confirmPassord) {
-  
-    }
-  }
-
 }
