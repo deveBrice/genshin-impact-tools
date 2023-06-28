@@ -19,23 +19,19 @@ export class SignInComponent implements OnInit {
 
   public displaySignInForm() {
     this.signInForm = this.fb.group({
-      pseudo: [''],
+      email: [''],
       password: ['']
     })
-    const signInSetting = {
+    const signInSetting: any = {
       name: 'signIn',
       title: 'Connexion',
       signInForm: {
-        pseudo: [''],
+        email: [''],
         password: ['']
       },
       textButton: 'Connexion'
     }
     this.signInForm = signInSetting;
   }  
-
-  public signIn() {
-    console.log(this.signInForm.value)
-  }
 
 }

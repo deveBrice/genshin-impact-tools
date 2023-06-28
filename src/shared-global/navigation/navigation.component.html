@@ -7,7 +7,11 @@
       <button mat-raised-button (click)="addCharacter()" class="round-button">
         <mat-icon>person_add</mat-icon>
       </button>
-      <button mat-raised-button (click)="signIn()" class="round-button">Connexion</button>
+      <div class="auth-group-button">
+        <button mat-raised-button *ngIf="!authResult" (click)="signIn()" class="round-button">Connexion</button>
+        <button mat-raised-button *ngIf="authResult" (click)="signOut()" class="round-button">Déconnexion</button>
+      </div>
+      
     </div>
     
 </mat-toolbar>

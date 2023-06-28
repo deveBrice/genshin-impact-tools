@@ -46,7 +46,9 @@ const routes: Routes = [
   exports: [RouterModule, 
             NavigationComponent, 
             SharedGlobalModule
-           ]
+           ],
+           providers: []
+
 })
 
 
