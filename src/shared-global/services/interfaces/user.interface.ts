@@ -1,11 +1,11 @@
-export interface signUp {
+export interface SignUp {
     email: string;
     pseudo: string;
     password: string;
     confirmPassword: string;
 }
 
-export interface signIn {
+export interface SignIn {
     pseudo: string;
     password: string;
 }

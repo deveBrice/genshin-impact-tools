@@ -50,3 +50,10 @@
 .header-group-button {
   @apply w-full flex justify-between;
 }
+
+.current-user {
+  @apply ml-auto;
+  p {
+    @apply text-white-content text-base;
+  }
+}

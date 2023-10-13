@@ -7,6 +7,10 @@
       <button mat-raised-button (click)="addCharacter()" class="round-button">
         <mat-icon>person_add</mat-icon>
       </button>
+      <div class="current-user" *ngIf="authResult">
+        <p> Bienvenue, {{ pseudo }}</p>
+      </div>
+      
       <div class="auth-group-button">
         <button mat-raised-button *ngIf="!authResult" (click)="signIn()" class="round-button">Connexion</button>
         <button mat-raised-button *ngIf="authResult" (click)="signOut()" class="round-button">Déconnexion</button>
@@ -33,6 +37,6 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
-       <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
