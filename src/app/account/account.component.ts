@@ -66,7 +66,8 @@ export class AccountComponent implements OnInit, OnChanges {
     switch(this.formName) {
        case 'signUp':
         console.log(this.accountForm)
-        this.authService.createUser(this.accountForm.value).subscribe();
+        delete this.accountForm.value['confirmPassword'];
+       this.authService.createUser(this.accountForm.value).subscribe();
         break;
         case 'signIn':
         console.log(this.accountForm)

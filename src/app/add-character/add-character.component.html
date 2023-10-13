@@ -1,25 +1,35 @@
-<div class="add-character-form-container">
+<div class="add-character-form-container" *ngIf="authResult">
     <div class="add-character-form-content custom-scroll-bar">
-        
-       <form [formGroup]="addCharacterForm" (ngSubmit)="createCharacter()" autocomplete="off">
+
+        <form [formGroup]="addCharacterForm" (ngSubmit)="createCharacter()" autocomplete="off" novalidate>
             <div class="character-picture-header">
                 <img *ngIf="characterImage" [src]="characterImage" class="image">
             </div>
+            <mat-form-field>
+                <mat-label>Numéro</mat-label>
+                <input matInput type="number" formControlName="num">
+            </mat-form-field>
+
             <mat-form-field>
                 <mat-label>Nom</mat-label>
                 <input matInput formControlName="name">
             </mat-form-field>
 
-            <mat-form-field class="character-picture">
+            <mat-form-field class="file-input-custom">
                 <mat-label>Image du personnage</mat-label>
-                    <div class="upload-picture-edit">
-                        <input type="file" accept=".png, .jpg, .jpeg" #uploadCharacterPicture
-                            (change)="uploadPicture($event,  'character')" />
-                    </div>
-                <input matInput formControlName="picture">
-                <button mat-mini-fab (click)="characterPicture(uploadCharacterPicture, $event)" matSuffix> <img
-                        src="assets/imgs/logo/picture-logo.png" alt="picture logo"></button>
+                <label for="file-input" style="cursor:pointer" matSuffix>
+                    <img src="https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/128/Downloads-icon.png"/>
+
+                </label>
+                <input mat-mini-fab type="file" accept=".png, .jpg, .jpeg" #uploadCharacterPicture id="file-input"
+                    (change)="uploadPicture($event,  'characters')" class="upload-picture"
+                    src="https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/128/Downloads-icon.png"
+                    matSuffix />
+
+                <input matInput type="text" formControlName="picture">
+
             </mat-form-field>
+     
 
             <mat-form-field>
                 <mat-label>Text alternatif du personnage</mat-label>
@@ -48,15 +58,15 @@
             </mat-form-field>
 
             <div formGroupName="weapon" class="groupName">
-                <mat-form-field>
+                <mat-form-field class="file-input-custom">
                     <mat-label>Logo arme</mat-label>
-                    <div class="upload-picture-edit">
-                        <input type="file" accept=".png, .jpg, .jpeg" #uploadWeaponPicture
-                            (change)="uploadPicture($event, 'weapon')" />
-                    </div>
-                    <button mat-mini-fab (click)="weaponPicture(uploadWeaponPicture, $event)" matSuffix> <img src="assets/imgs/logo/picture-logo.png"
-                        alt="picture logo"></button>
-                    <input matInput formControlName="picture" >
+                    <label for="file-input" style="cursor:pointer" matSuffix>
+                        <img src="https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/128/Downloads-icon.png" />
+                    </label>
+                    <input mat-mini-fab type="file" accept=".png, .jpg, .jpeg" #uploadCharacterPicture id="file-input"
+                        (change)="uploadPicture($event,  'weapons')" class="upload-picture"
+                        matSuffix />
+                    <input matInput formControlName="picture">
                 </mat-form-field>
 
                 <mat-form-field>
@@ -64,18 +74,19 @@
                     <input matInput formControlName="alt">
                 </mat-form-field>
             </div>
-
+             <!--assets/imgs/logo/picture-logo.png-->
             <div formGroupName="element" class="groupName">
-                <mat-form-field>
+                <mat-form-field class="file-input-custom">
                     <mat-label>Logo element</mat-label>
-                    <div class="upload-picture-edit">
-                        <input type="file" accept=".png, .jpg, .jpeg" #uploadElementPicture
-                            (change)="uploadPicture($event, 'element')" />
-                    </div>
+                    <label for="file-input" style="cursor:pointer" matSuffix>
+                        <img src="https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/128/Downloads-icon.png" />
+                    </label>
+                    <input mat-mini-fab type="file" accept=".png, .jpg, .jpeg" #uploadCharacterPicture id="file-input"
+                        (change)="uploadPicture($event,  'elements')" class="upload-picture"
+                        matSuffix />
 
                     <input matInput formControlName="picture">
-                    <button mat-mini-fab (click)="elementPicture(uploadElementPicture, $event)" matSuffix> <img src="assets/imgs/logo/picture-logo.png"
-                            alt="picture logo"></button>
+                   
                 </mat-form-field>
 
                 <mat-form-field>
@@ -84,7 +95,8 @@
                 </mat-form-field>
             </div>
             <div class="create-character-button">
-                <button type="submit" mat-raised-button [ngClass]="addCharacterForm.valid ? 'custom-button' : ''" [disabled]="!addCharacterForm.valid">Création</button>
+                <button type="submit" mat-raised-button [ngClass]="addCharacterForm.valid ? 'custom-button' : ''"
+                    [disabled]="!addCharacterForm.valid">Création</button>
             </div>
         </form>
     </div>

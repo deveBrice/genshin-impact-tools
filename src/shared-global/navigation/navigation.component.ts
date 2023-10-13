@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth/auth.service';
 import { Subscription } from 'rxjs';
-//import { SocialUser } from '@abacritt/angularx-social-login';
 
 @Component({
   selector: 'app-navigation',
@@ -13,8 +12,9 @@ import { Subscription } from 'rxjs';
 export class NavigationComponent implements OnInit {
 
   public sideMenu: any[] = [];
-  //public user: SocialUser;
+
   public authResult: boolean;
+  public pseudo: string = '';
   public subscription: Subscription;
   
   constructor(private router: Router, private authService: AuthService) {}
@@ -39,13 +39,15 @@ export class NavigationComponent implements OnInit {
  }
 
  public signIn() {
- // this.user = this.authService.user;
   this.router.navigate(['/Connexion'])
  }
 
  public userState() {
   this.subscription = this.authService.authChanged.subscribe((auth: boolean) => {
       this.authResult = auth;
+      if(auth) {
+        this.pseudo = this.authService.pseudo;
+      }
   })
 }
 
