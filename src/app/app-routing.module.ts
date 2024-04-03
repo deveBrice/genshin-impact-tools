@@ -11,7 +11,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AccountComponent } from './account/account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { CharactersFilterComponent } from './characters-filter/characters-filter.component';
+import { SearchCharactersComponent } from './search-characters/search-characters.component';
+import { ElementsFilterComponent } from './characters-filter/elements-filter/elements-filter.component';
+import { FirstLetterUppercase } from './characters-filter/elements-filter/first-letter-uppercase.pipe';
+import { StarsFilterComponent } from './characters-filter/stars-filter/stars-filter.component';
+import { WeaponFilterComponent } from './weapon-filter/weapon-filter.component';
+import { LocationFilterComponent } from './location-filter/location-filter.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'Accueil', pathMatch: 'full'},
@@ -41,7 +47,14 @@ const routes: Routes = [
                  AddCharacterComponent, 
                  SignUpComponent, 
                  SignInComponent,
-                 AccountComponent
+                 AccountComponent,
+                 CharactersFilterComponent,
+                 SearchCharactersComponent,
+                 ElementsFilterComponent,
+                 FirstLetterUppercase,
+                 StarsFilterComponent,
+                 WeaponFilterComponent,
+                 LocationFilterComponent
                 ],
   exports: [RouterModule, 
             NavigationComponent, 

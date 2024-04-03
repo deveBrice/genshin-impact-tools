@@ -1,0 +1,58 @@
+<div class="stars-filter-content">
+    <div class="filter-title">
+        <h2>Etoiles</h2>
+        <mat-icon [@rotatedState]='arrowState' (click)="rotateArrow()">
+            arrow_circle_down</mat-icon>
+    </div>
+    <div class="element-filter-form" [ngClass]="arrowState === 'arrow-down' ? 'displayStarFilter' : 'hideStarFilter'">
+        <form [formGroup]="starsFilterForm">
+            <div formArrayName="stars">
+                <div [formGroupName]="i" class="checkbox-label {{starsList[i].name}}" *ngFor="let ea of starsArray?.controls; let i = index">
+                    <div class="{{starsList[i].name}}">
+                        <div class="input-custom checkbox-star">
+                         
+                            <input #select
+                            id="{{starsList[i].name}}-{{i}}" 
+                            type="checkbox" 
+                            formControlName="checked" 
+                            (change)="toggleCheckboxAll(i, starsList)" 
+                            >
+                            <label for="{{starsList[i].name}}-{{i}}"></label>
+                            <p>{{starsList[i].name}}</p>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--<div class="stars-filter-content">
+    <div class="filter-title">
+        <h2>Étoiles</h2>
+        <mat-icon>arrow_circle_down</mat-icon>
+    </div>
+    <div class="stars-filter-form">
+        <form [formGroup]="starsFilterForm">
+            <div formArrayName="stars">
+                <div [formGroupName]="i" class="{{starsList[i].name}}" *ngFor="let s of starsArray?.controls; let i = index">
+                    <div class="{{starsList[i].name}}" *ngFor="let sl of starsList[i].number; let j = index">
+                        <div class="input-custom checkbox-star">
+                            <input #select
+                            id="{{starsList[i].name}}-{{j}}" 
+                            type="checkbox" 
+                            formControlName="checked" 
+                            (change)="toggleCheckboxAll(i, starsList)" 
+                            >
+                            
+                           
+                            <label for="{{starsList[i].name}}-{{j}}"></label>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>-->
+
+

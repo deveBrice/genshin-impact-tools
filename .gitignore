@@ -51,3 +51,8 @@ Thumbs.db
 
 #google
 /google-provider.txt
+
+#imgs
+/src/assets/imgs/characters
+/src/assets/imgs/weapons
+/src/assets/imgs/elements

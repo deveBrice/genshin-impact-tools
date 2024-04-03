@@ -1,0 +1,67 @@
+.filter-title {
+  
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+   
+   h2 {
+       color: #FFFFFF;
+       font-size: 20px;
+   }
+   
+       mat-icon {
+           color: #C2C3C5;
+           cursor: pointer;
+       }
+   }
+
+   .displayLocationFilter {
+    display: block;
+    visibility: visible;
+    transition: all 300ms, opacity 0.5s linear;
+   }
+
+   .hideLocationFilter {
+    display: none;
+    visibility: hidden;
+    transition: all 300ms, opacity 0.5s linear;
+   }
+   
+   .cities-list {
+       margin-bottom: 10px;
+       display: flex;
+       img {
+           height: 30px;
+           margin-right: 3px;
+           opacity: 0.6;
+           cursor: pointer;
+       }
+   
+       p {
+          color: #EED5A0;
+          opacity: 0.6;
+          cursor: pointer;
+       }
+   }
+   
+   .cities-list:nth-child(2) {
+       img {
+           height: 25px !important;
+       }
+   }
+   
+   .active {
+       p, img {
+           opacity: 1;
+       }
+   }
+   
+   .desactive {
+       p, img {
+           opacity: 0.6;
+       }
+   }
+   
+   .custom-cities img, p {
+      opacity: 1;
+   }

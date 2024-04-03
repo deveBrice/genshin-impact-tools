@@ -30,7 +30,7 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
 
 
   public raretiesList: string[] = [
-    "★★★★",
+    "★★★★☆",
     "★★★★★"
   ]
 
@@ -38,10 +38,14 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
     "Mondstadts",
     "Liyue",
     "Inazuma",
-    "Sumeru"
+    "Sumeru",
+    "Fontaine",
+    "Snezhnaya",
+    "Autre monde"
   ]
 
   public colorsList: any[] = [
+    {name: 'Anemo', color: '#74C2A8'},
     {name: 'Electro', color: '#9955CC'},
     {name: 'Pyro', color: '#FE925D'},
     {name: 'Hydro', color: '#21E1EB'},
@@ -62,19 +66,23 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
 
   public displayCharacterForm() {
     this.addCharacterForm = this.fb.group({
-      num: ['', Validators.required],
+      num: [''],
       name: ['', Validators.required],
-      picture: ['', Validators.required],
-      alt: ['', Validators.required],
-      location: ['', Validators.required],
-      rarety: ['', Validators.required],
-      color: ['', Validators.required],
-      weapon: this.fb.group({
-        picture: ['', Validators.required],
+      element: ['', Validators.required],
+      characterPicture: this.fb.group({
+        url: ['', Validators.required],
         alt: ['', Validators.required]
       }),
-      element: this.fb.group({
-        picture: ['', Validators.required],
+      weapon: ['', Validators.required],
+      rarety: ['', Validators.required],
+      location: ['', Validators.required],
+      color: ['', Validators.required],
+      weaponPicture: this.fb.group({
+        url: ['', Validators.required],
+        alt: ['', Validators.required]
+      }),
+      elementPicture: this.fb.group({
+        url: ['', Validators.required],
         alt: ['', Validators.required]
       })
     });
@@ -91,18 +99,18 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
       switch (fieldName) {
         case 'characters':
           reader.onload = () =>{ this.characterImage = reader.result}
-          this.addCharacterForm.patchValue({picture: file.name});
-          this.characterRequest.uploadPicture('characters', file)
+          this.addCharacterForm.patchValue({ characterPicture: { url: file.name, alt: '' }});
+         // this.characterRequest.uploadPicture('characters', file)
           break;
         case 'weapons':
           reader.onload = () =>{ this.weaponsImage = reader.result}
-          this.addCharacterForm.patchValue({ weapon: { picture: file.name, alt: '' }});
-          this.characterRequest.uploadPicture('weapons', file)
+          this.addCharacterForm.patchValue({ weaponPicture: { url: file.name, alt: '' }});
+          //this.characterRequest.uploadPicture('weapons', file)
           break;
         case 'elements':
           reader.onload = () =>{ this.elementImage = reader.result}
-          this.addCharacterForm.patchValue({ element: { picture: file.name, alt: '' } });
-          this.characterRequest.uploadPicture('elements', file)
+          this.addCharacterForm.patchValue({ elementPicture: { url: file.name, alt: '' } });
+         // this.characterRequest.uploadPicture('elements', file)
           break;
       }
     }
@@ -150,7 +158,8 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
   public createCharacter() {
     let character = new Character();
     character = this.addCharacterForm.value;
-    this.characterRequest.create(character).subscribe();
+    console.log(character)
+   this.characterRequest.create(character).subscribe();
     this.filesToUpload = [];
   }
 

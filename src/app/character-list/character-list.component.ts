@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from 'src/shared-global/services/auth/auth.service';
 import { CharacterRequest } from 'src/shared-global/services/request/character.request';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription, of } from 'rxjs';
 import { Character } from 'src/shared-global/services/models/character.model';
 
 @Component({
@@ -14,7 +14,9 @@ export class CharacterListComponent implements OnInit, OnDestroy {
 
   public authResult: boolean;
   public subscription: Subscription;
-  public charactersList: any[];
+  public charactersList: any[] = [];
+  public charactersSearch: string;
+  public newCharactersList: any[] = [];
 
   constructor(public authService: AuthService, private characterRequest: CharacterRequest) { }
 
@@ -145,17 +147,26 @@ export class CharacterListComponent implements OnInit, OnDestroy {
   }
 
   public getCharacterList() {
-    this.characterRequest.read().subscribe((charactersList: Character[]) => {
+   this.characterRequest.read().subscribe((charactersList: Character[]) => {
       this.charactersList = charactersList;
-      console.log(this.charactersList)
+      this.newCharactersList = charactersList;
     })
   }
 
   public getOneCharacter() {
     this.characterRequest.readone(this.authService.userId).subscribe((ro: any) => {
-      console.log(ro)
+      //console.log(ro)
     })
   }
+
+ public searchResult($event: Observable<string>) {
+    $event.subscribe(res => this.charactersSearch = res);
+ }
+
+ public characterFilterResult($event: any[]) {
+    console.log($event)
+    this.newCharactersList = $event;
+ }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

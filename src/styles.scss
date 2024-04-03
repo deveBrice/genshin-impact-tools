@@ -94,3 +94,274 @@ html, body {
         }
     }
 }
+
+:root {
+    --background: #FFFFFF;
+}
+
+.search-character {
+    .mat-form-field {
+        height: 50px;
+
+        mat-label {
+            color: #FFFFFF;
+        }
+
+        .mat-form-field-underline {
+            background-color: var(--background);
+        }
+    }
+
+    .mat-form-field.mat-focused .mat-form-field-ripple {
+        background-color: #FFFFFF !important;
+    }
+    
+    .mat-form-field-ripple {
+        background-color: #FFFFFF !important;
+    }
+    
+    .mat-form-field-appearance-fill .mat-form-field-underline::before {
+        background-color: #FFFFFF !important;
+    }
+    
+    .mat-form-field-label {
+        color: #FFFFFF;
+    }
+
+    mat-form-field.mat-form-field {
+        color: white;
+        width: 400px;
+        font-size: 14px;
+    }
+}
+
+.input-custom {
+    .mat-form-field {
+
+        mat-label {
+            color: #C2C3C5;
+        }
+
+        .mat-form-field-underline {
+            background-color: var(--background);
+        }
+    }
+
+    .mat-form-field.mat-focused .mat-form-field-ripple {
+        background-color: #C2C3C5 !important;
+    }
+    
+    .mat-form-field-ripple {
+        background-color: #C2C3C5 !important;
+    }
+    
+    .mat-form-field-appearance-fill .mat-form-field-underline::before {
+        background-color: #C2C3C5 !important;
+    }
+    
+    .mat-form-field-label {
+        color: #C2C3C5;
+    }
+
+    mat-form-field.mat-form-field {
+        color: white;
+        width: 400px;
+        font-size: 14px;
+    }
+
+    .mat-select-arrow {
+        @apply text-gray-100;
+    }
+
+    .mat-select-value-text {
+        color: #FFFFFF;
+    }
+}
+
+.checkbox-custom-theme {
+    .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #FF5722 !important;
+    }
+  
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: #FF5722 !important;
+    }
+  
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #FF5722 !important;
+    }
+  }
+
+    .checkbox-label {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        
+        .mat-checkbox-layout .mat-checkbox-label {
+            color: #FFFFFF;
+        }
+    }
+
+  .pyro-filter {
+    .mat-checkbox-frame { 
+        border-color: #FE925D; 
+    }
+
+    .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #FE925D !important;
+    }
+  
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: #FE925D !important;
+    }
+  
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #FE925D !important;
+    }
+  }
+
+  .hydro-filter {
+    .mat-checkbox-frame { 
+        border-color: #21E1EB; 
+    }
+
+    .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #21E1EB !important;
+    }
+  
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: #21E1EB !important;
+    }
+  
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #21E1EB !important;
+    }
+  }
+
+  .electro-filter {
+    .mat-checkbox-frame { 
+        border-color: #9955CC; 
+    }
+
+    .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #9955CC !important;
+    }
+  
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: #9955CC !important;
+    }
+  
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #9955CC !important;
+    }
+  }
+
+  .cryo-filter {
+    .mat-checkbox-frame { 
+        border-color: #8BD3CF; 
+    }
+
+    .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #8BD3CF !important;
+    }
+  
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: #8BD3CF !important;
+    }
+  
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #8BD3CF !important;
+    }
+  }
+
+  .anemo-filter {
+    .mat-checkbox-frame { 
+        border-color: #74C2A8; 
+    }
+
+    .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #74C2A8 !important;
+    }
+  
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: #74C2A8 !important;
+    }
+  
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #74C2A8 !important;
+    }
+  }
+
+  .geo-filter {
+    .mat-checkbox-frame { 
+        border-color: #E3B342; 
+    }
+
+    .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #E3B342 !important;
+    }
+  
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: #E3B342 !important;
+    }
+  
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #E3B342 !important;
+    }
+  }
+
+  .dendro-filter {
+    .mat-checkbox-frame { 
+        border-color: #23C18A; 
+    }
+
+    .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #23C18A !important;
+    }
+  
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: #23C18A !important;
+    }
+  
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #23C18A !important;
+    }
+  }
+
+
+
+/*::-webkit-scrollbar {
+    width: 17px;
+   // background-color: #102027;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 20px;
+    height: 90%;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: #ff5722;
+  }*/
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+   // background-color: #102027;
+  }
+  
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background-color: #C2C3C5;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+  }
