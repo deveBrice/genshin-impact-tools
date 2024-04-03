@@ -35,6 +35,7 @@ module.exports = {
       'blue-content': '#B3CEEE',
       'form-color': '#00ACC1',
       'light-blue': colors.lightBlue,
+      'gray-100': '#C2C3C5'
     },
     extend: {
         height: {
@@ -77,7 +78,8 @@ module.exports = {
     },
     minHeight: {
       '200px': '200px',
-      '446': '27.875'
+      '446': '27.875',
+      '250': '15.625rem',
     },
     maxHeight: {
       '250': '15.625rem',

@@ -1,9 +1,30 @@
-.character-list-content {
+.search-characters {
+    width: 100%;
+}
+
+.characters-list-content {
+    height: 100%;
+    display: flex;
+    background-color: #51555A;
+}
+
+.column-content-character {
+    flex: 1;
+}
+
+.characters-card-container {
+    height: 100%
+}
+
+.characters-card-content {
   @apply flex flex-wrap xs:justify-center sm:justify-start;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 70px;
 }
 
 .character {
-    @apply flex-1 max-w-250 max-h-250 rounded-card bg-dark-content m-10 drop-shadow-purple;
+    @apply flex-1 max-w-250 max-h-250 rounded-card bg-dark-content m-10 /*drop-shadow-purple*/;
 }
 
 .card-header-content {
@@ -12,6 +33,8 @@
 
 .character-picture img {
     @apply m-auto;
+    height: 120px;
+    width: 120px;
 }
 
 .card-content {
@@ -19,7 +42,7 @@
 }
 
 .character-name h1 {
-    @apply text-2xl text-electro-color;
+    @apply text-2xl;
 }
 
 .rarety {
