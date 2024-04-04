@@ -1,5 +1,22 @@
-.search-characters {
+.search-characters-content {
+    position: relative;
     width: 100%;
+    background-color: #32373D;
+    box-shadow: 0 4px 0px 0px #C2C3C5;
+    border-radius: 30px;
+    padding: 0 16px 0 16px;
+    display: flex;
+    justify-content: center;
+    margin: 10px 10px 10px 10px;
+
+    .characters-number {
+        position: absolute;
+        right: 20px;
+        bottom: 12px;
+        p {
+            color: #FFFFFF
+        }
+    }
 }
 
 .characters-list-content {

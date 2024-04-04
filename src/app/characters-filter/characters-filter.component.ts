@@ -133,7 +133,7 @@ export class CharactersFilterComponent implements OnInit, AfterViewInit {
         /*this.typeChecked(find) === "array" ? find.includes(obj[prop]):
         obj[prop].includes(find)*/
       ));
-     // console.log(res)
+      console.log(newCharacterList)
       this.characterFilterResult.emit(newCharacterList);
   }
 
