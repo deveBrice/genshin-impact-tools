@@ -164,7 +164,7 @@ export class CharacterListComponent implements OnInit, OnDestroy {
  }
 
  public characterFilterResult($event: any[]) {
-    console.log($event)
+ 
     this.newCharactersList = $event;
  }
 

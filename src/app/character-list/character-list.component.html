@@ -10,10 +10,22 @@
      
         <div class="characters-card-container">
             <!--<h1>Liste des personnage</h1>-->
-            <div class="search-characters">
-                <app-search-characters (searchResult$)="searchResult($event)">
-                </app-search-characters>
+            <div class="search-characters-content">
+                <div class="search-characters">
+                    <app-search-characters (searchResult$)="searchResult($event)">
+                    </app-search-characters>
+                </div>
+                
+                <div class="characters-number">
+                    <p>
+                        Résultats:
+                        {{ newCharactersList.length}}/
+                        {{ charactersList.length }}
+                    </p>
+                </div>
             </div>
+
+          
             <div class="characters-card-content custom-scrollbar">
                 <mat-card class="character" *ngFor="let character of newCharactersList"
                     [ngStyle]="{'box-shadow': '0 4px 0px 0px' + character.color}">
