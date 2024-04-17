@@ -1,22 +1,30 @@
 export class Character {
+  _id?: number;
+   num?: number;
    name: string;
-   picture: string;
-   alt: string;
-   location: string;
+   element: string;
+   characterPicture: CharacterPicture;
+   weapon: string;
    rarety: string;
+   location: string;
    color: string;
-   weapon: Weapon;
-   element: Element;
+   weaponPicture: WeaponPicture;
+   elementPicture: ElementPicture;
 }
 
-export class Weapon {
-    picture: string;
-    alt: string;
+export class CharacterPicture {
+  url: string;
+  alt: string;
 }
 
-export class Element {
-    picture: string;
-    alt: string;
+export class WeaponPicture {
+  url: string;
+  alt: string;
+}
+
+export class ElementPicture {
+  url: string;
+  alt: string;
 }
 
 /*

@@ -46,6 +46,15 @@
 
 .card-header-content {
     @apply flex justify-between w-full;
+
+    .element-picture {
+        mat-icon {
+            margin-top: 5px;
+            color: #C2C3C5;
+            cursor: pointer;
+        }
+        
+    }
 }
 
 .character-picture img {

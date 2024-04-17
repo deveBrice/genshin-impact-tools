@@ -10,7 +10,7 @@ import { Character } from 'src/shared-global/services/models/character.model';
   templateUrl: './add-character.component.html',
   styleUrls: ['./add-character.component.scss']
 })
-export class AddCharacterComponent implements OnInit, OnDestroy {
+export class AddCharacterComponent implements OnInit {
 
   @ViewChild('inputUploadPicture', { static: false }) pRef: ElementRef;
   public addCharacterForm: FormGroup;
@@ -25,6 +25,7 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
   public arrayFile: any[] = [];
   public filesToUpload: Array<File> = [];
   public path: string = "";
+  public addCharacterData: any
 
 
 
@@ -60,11 +61,26 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
               ) { }
 
   ngOnInit(): void {
-    this.displayCharacterForm();
+   // this.displayCharacterForm();
     this.userState();
+    this.addCharacter();
   }
 
-  public displayCharacterForm() {
+  public userState() {
+    this.subscription = this.authService.authChanged.subscribe((auth: boolean) => {
+      console.log(auth)
+        this.authResult = auth;
+    })
+  }
+
+  public addCharacter() {
+    this.addCharacterData = {
+      requestType: "add",
+    }
+  }
+
+
+  /*public displayCharacterForm() {
     this.addCharacterForm = this.fb.group({
       num: [''],
       name: ['', Validators.required],
@@ -86,6 +102,9 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
         alt: ['', Validators.required]
       })
     });
+
+
+   
   }
 
 
@@ -148,12 +167,7 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
 
 
 
-  public userState() {
-    this.subscription = this.authService.authChanged.subscribe((auth: boolean) => {
-      console.log(auth)
-        this.authResult = auth;
-    })
-  }
+
 
   public createCharacter() {
     let character = new Character();
@@ -165,5 +179,5 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
-  }
+  }*/
 }

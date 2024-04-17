@@ -39,7 +39,10 @@
                             </div>
                             <div class="element-picture">
                                 <img [src]="character.elementPicture.url" [alt]="character.elementPicture.alt">
+                                <mat-icon (click)="updateCharacters(character)">edit</mat-icon>
                             </div>
+
+                            
                         </div>
 
                     </mat-card-header>

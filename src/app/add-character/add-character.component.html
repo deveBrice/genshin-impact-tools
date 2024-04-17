@@ -1,4 +1,8 @@
-<div class="add-character-form-container custom-scrollbar" *ngIf="authResult">
+<div class="characters-manager-content" *ngIf="authResult">
+    <app-characters-manager-list [charactersForm]="addCharacterData"></app-characters-manager-list>
+</div>
+
+<!--<div class="add-character-form-container custom-scrollbar" *ngIf="authResult">
     <div class="add-character-form-content">
         <div class="tittle-form">
             <h2>Ajouter un personnage</h2>
@@ -114,7 +118,7 @@
             </form>
         </div>
     </div>
-</div>
+</div>-->
 
 
 
