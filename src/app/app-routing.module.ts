@@ -18,6 +18,8 @@ import { FirstLetterUppercase } from './characters-filter/elements-filter/first-
 import { StarsFilterComponent } from './characters-filter/stars-filter/stars-filter.component';
 import { WeaponFilterComponent } from './weapon-filter/weapon-filter.component';
 import { LocationFilterComponent } from './location-filter/location-filter.component';
+import { UpdateCharacterComponent } from './update-character/update-character.component';
+import { CharactersManagerListComponent } from './characters-manager-list/characters-manager-list.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'Accueil', pathMatch: 'full'},
@@ -28,6 +30,7 @@ const routes: Routes = [
   {path: "Matériaux", component: HomeComponent},
   {path: "Théorycraft", component: HomeComponent},
   {path: "Ajouter_un_personnage", component: AddCharacterComponent },
+  {path: "Modifier_un_personnage/:id", component: UpdateCharacterComponent },
   {path: "Inscription", component: SignUpComponent},
   {path: "Connexion", component: SignInComponent},
   {path: "Account", component: AccountComponent},
@@ -45,6 +48,7 @@ const routes: Routes = [
                  HomeComponent, 
                  CharacterListComponent, 
                  AddCharacterComponent, 
+                 UpdateCharacterComponent,
                  SignUpComponent, 
                  SignInComponent,
                  AccountComponent,
@@ -54,7 +58,8 @@ const routes: Routes = [
                  FirstLetterUppercase,
                  StarsFilterComponent,
                  WeaponFilterComponent,
-                 LocationFilterComponent
+                 LocationFilterComponent,
+                 CharactersManagerListComponent
                 ],
   exports: [RouterModule, 
             NavigationComponent, 

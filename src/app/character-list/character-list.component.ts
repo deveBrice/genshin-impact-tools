@@ -3,6 +3,7 @@ import { AuthService } from 'src/shared-global/services/auth/auth.service';
 import { CharacterRequest } from 'src/shared-global/services/request/character.request';
 import { Observable, Subscription, of } from 'rxjs';
 import { Character } from 'src/shared-global/services/models/character.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-character-list',
@@ -18,7 +19,10 @@ export class CharacterListComponent implements OnInit, OnDestroy {
   public charactersSearch: string;
   public newCharactersList: any[] = [];
 
-  constructor(public authService: AuthService, private characterRequest: CharacterRequest) { }
+  constructor(public authService: AuthService, 
+              private characterRequest: CharacterRequest,
+              public router: Router
+            ) { }
 
   ngOnInit(): void {
     this.userState();
@@ -153,11 +157,7 @@ export class CharacterListComponent implements OnInit, OnDestroy {
     })
   }
 
-  public getOneCharacter() {
-    this.characterRequest.readone(this.authService.userId).subscribe((ro: any) => {
-      //console.log(ro)
-    })
-  }
+
 
  public searchResult($event: Observable<string>) {
     $event.subscribe(res => this.charactersSearch = res);
@@ -166,6 +166,11 @@ export class CharacterListComponent implements OnInit, OnDestroy {
  public characterFilterResult($event: any[]) {
  
     this.newCharactersList = $event;
+ }
+
+ public updateCharacters(character: Character) {
+    console.log(character)
+    this.router.navigate(['Modifier_un_personnage', character._id])
  }
 
   ngOnDestroy(): void {
