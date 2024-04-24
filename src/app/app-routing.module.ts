@@ -20,6 +20,7 @@ import { WeaponFilterComponent } from './weapon-filter/weapon-filter.component';
 import { LocationFilterComponent } from './location-filter/location-filter.component';
 import { UpdateCharacterComponent } from './update-character/update-character.component';
 import { CharactersManagerListComponent } from './characters-manager-list/characters-manager-list.component';
+import { RGBA } from 'src/shared-global/pipes/rgba.pipe';
 
 const routes: Routes = [
   {path: '', redirectTo: 'Accueil', pathMatch: 'full'},
@@ -59,7 +60,8 @@ const routes: Routes = [
                  StarsFilterComponent,
                  WeaponFilterComponent,
                  LocationFilterComponent,
-                 CharactersManagerListComponent
+                 CharactersManagerListComponent,
+                 RGBA
                 ],
   exports: [RouterModule, 
             NavigationComponent, 

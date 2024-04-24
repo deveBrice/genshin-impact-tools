@@ -14,8 +14,9 @@ export class CharacterRequest {
     private readonly api_read_character_url: string = ConstantsCommon.API_READ_CHARACTER_URL;
     private readonly api_readone_character_url: string = ConstantsCommon.API_READONE_CHARACTER_URL;
     private readonly api_update_character_url: string = ConstantsCommon.API_UPDATE_CHARACTER_URL;
+    private readonly api_delete_character_url: string = ConstantsCommon.API_DELETE_CHARACTER_URL;
     public readonly api_upload_picture_url: string = ConstantsCommon.API_UPLOAD_PICTURE_URL;
-
+    
     constructor(private httpClient: HttpClient, private authService: AuthService) { }
 
     public create(character: Character) {
@@ -44,6 +45,12 @@ export class CharacterRequest {
         return this.httpClient.put(this.api_update_character_url + id, characterData, {
             observe: 'body'
         })
+    }
+
+    public delete(id: string) {
+        return this.httpClient.delete(this.api_delete_character_url + id, {
+            observe: 'body'
+        });
     }
 
     public uploadPicture(destination: string, file: File) {
