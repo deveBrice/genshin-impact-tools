@@ -1,5 +1,5 @@
 export class Character {
-  _id?: number;
+  _id?: string;
    num?: number;
    name: string;
    element: string;

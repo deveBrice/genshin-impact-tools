@@ -18,6 +18,8 @@ export class CharacterListComponent implements OnInit, OnDestroy {
   public charactersList: any[] = [];
   public charactersSearch: string;
   public newCharactersList: any[] = [];
+  public deleteState: boolean = false;
+  public characterId: string;
 
   constructor(public authService: AuthService, 
               private characterRequest: CharacterRequest,
@@ -169,8 +171,20 @@ export class CharacterListComponent implements OnInit, OnDestroy {
  }
 
  public updateCharacters(character: Character) {
-    console.log(character)
     this.router.navigate(['Modifier_un_personnage', character._id])
+ }
+
+ public deleteCharacter(character: Character) {
+ 
+   this.characterId = character._id;
+ }
+
+ public accept() {
+  this.characterRequest.delete(this.characterId).subscribe();
+ }
+
+ public refuse() {
+    this.characterId = null;
  }
 
   ngOnDestroy(): void {
