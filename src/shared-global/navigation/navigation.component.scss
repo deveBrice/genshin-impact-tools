@@ -1,9 +1,9 @@
 .toolbar-custom .mat-toolbar-row, .mat-toolbar-single-row {
-  @apply pl-6px;
+  @apply pl-1.5;
 }
 
 .sidenav-content {
-  overflow: hidden;
+  @apply overflow-hidden;
 }
 
 .sidenav-container {
@@ -58,6 +58,6 @@
 .current-user {
   @apply ml-auto;
   p {
-    @apply text-white-content text-base;
+    @apply text-white-content text-4;
   }
 }

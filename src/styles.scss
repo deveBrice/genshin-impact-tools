@@ -21,7 +21,7 @@ html, body, wrapper {
 
 .add-character-form-content {
     .mat-button-wrapper {
-        @apply pt-5px #{!important};
+        @apply pt-1.252 #{!important};
     } 
 }
 
@@ -90,7 +90,7 @@ html, body, wrapper {
 
     .account-title {
         h1 {
-           @apply text-center text-white text-24 #{!important};
+           @apply text-center text-white text-6 #{!important};
         }
     }
 }

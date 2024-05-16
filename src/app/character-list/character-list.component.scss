@@ -1,84 +1,81 @@
 .search-characters-content {
-    position: relative;
-    width: 100%;
-    background-color: #32373D;
-    box-shadow: 0 4px 0px 0px #C2C3C5;
-    border-radius: 30px;
-    padding: 0 16px 0 16px;
-    display: flex;
-    justify-content: center;
-    margin: 10px 10px 10px 10px;
+    @apply relative 
+    w-full 
+    bg-dark-content 
+    shadow-light-gray-bottom
+    rounded-7.5 
+    pr-4 pl-4 
+    flex 
+    justify-center 
+    mt-2.5 
+    mr-2.5 
+    mb-2.5 
+    ml-2.5;
 
     .characters-number {
-        position: absolute;
-        right: 20px;
-        bottom: 12px;
+        @apply absolute right-5 bottom-3.2;
         p {
-            color: #FFFFFF
+            @apply text-white;
         }
     }
 }
 
 .characters-list-content {
-    height: 100%;
-    display: flex;
-    background-color: #51555A;
-}
-
-.column-content-character {
-    flex: 1;
+    @apply h-full flex bg-black-400;
 }
 
 .characters-card-container {
-    height: 100%
+    @apply h-full;
 }
 
 .characters-card-content {
-  @apply flex flex-wrap xs:justify-center sm:justify-start;
-  max-height: 100%;
-  overflow: auto;
-  padding-bottom: 70px;
-
-
+  @apply flex 
+  flex-wrap 
+  xs:justify-center 
+  sm:justify-start 
+  max-h-full 
+  overflow-auto 
+  pb-17.5;
 }
 
 .character {
-    position: relative;
-    @apply flex-1 w-250 h-250 max-w-250 max-h-250 rounded-card bg-dark-content m-10 /*drop-shadow-purple*/;
+    @apply relative 
+    w-62.5 h-62.5 
+    max-w-62.5 
+    max-h-62.5 
+    rounded-5 
+    bg-dark-content 
+    m-2.5 /*drop-shadow-purple*/;
 
     .transparent-filter {
-
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 250px;
-        width: 250px;
-        border-radius: 20px;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: center;
-         background-color: #32373D4D;
-         z-index: 999;
+         @apply absolute 
+                top-0 
+                right-0 
+                h-62.5 w-62.5 
+                rounded-5 
+                flex flex-col 
+                text-center 
+                justify-center 
+                bg-color-filter 
+                z-999;
          .question-delete {
             p {
-                text-align: center;
-                color: white;
-                font-weight: bold;
+                @apply text-center 
+                text-white
+                font-bold;
             }
         }
         .group-button-choice {
-             margin-top: 15px;
+            @apply mt-3.752;
             button {
-                border-radius: 50px;
+               @apply rounded-12.5;
             }
             .accept {
-                background-color: #3AEC1E;
-                margin-right: 34px;
+                @apply bg-remove-accept mr-8.5;
             }
     
             .refuse {
-                background-color:#D81B60;
+                @apply bg-remove-refuse;
             }
         }
     }
@@ -88,18 +85,13 @@
     @apply flex justify-between w-full;
 
     .element-picture {
-        display: flex;
-        flex-direction: column;
+        @apply flex flex-col;
         .update-icon {
-            margin-top: 5px;
-            color: #C2C3C5;
-            cursor: pointer;
+            @apply mt-1.252 text-gray-100 cursor-pointer;
         }
 
         .delete-icon {
-            margin-top: 5px;
-            color: #D81B60;
-            cursor: pointer;
+           @apply mt-1.252 text-trash-icon-color cursor-pointer;
         }
         
     }
@@ -108,13 +100,11 @@
 
 
 .character-picture img {
-    @apply m-auto;
-    height: 120px;
-    width: 120px;
+    @apply m-auto h-30 w-30;
 }
 
 .picture-custom {
-    filter: grayscale(100%);
+    @apply grayscale-100;
 }
 
 .card-content {
@@ -122,17 +112,17 @@
 }
 
 .character-name h1 {
-    @apply text-2xl;
+    @apply text-6.2;
 }
 
 .rarety {
-    @apply text-3xl; 
+    @apply text-7.8; 
 }
 
 .rarety span {
-   @apply text-3xl text-rarety-color;
+   @apply text-7.8 text-rarety-color;
 }
 
 .location h3 {
-    @apply text-base text-white;
+    @apply text-4 text-white;
 }

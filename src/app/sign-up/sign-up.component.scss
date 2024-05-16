@@ -1,7 +1,7 @@
 
         .sign-up-title {
             h1 {
-                @apply text-center text-white text-24;
+                @apply text-center text-white text-6;
             }
         }
         .group-button {
@@ -26,7 +26,7 @@
 .connexion-button {
     @apply flex justify-center;
     button {
-        @apply rounded-full min-w-250 h-40 bg-form-color text-dark-content;
+        @apply rounded-full min-w-87.5 h-10 bg-form-color text-dark-content;
     }
 }
 
