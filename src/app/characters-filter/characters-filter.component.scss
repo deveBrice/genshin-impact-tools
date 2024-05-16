@@ -1,25 +1,20 @@
 .filter-content {
-    height: 100%;
-    width: 200px;
-    border-radius: 1.25rem;
-    margin: 10px 0 0 10px;
-    box-shadow: 0 0 4px 0px #C2C3C5;
-    padding: 10px 0 0 10px;
-    @apply bg-dark-content;
+    @apply 
+    h-full 
+    w-50 
+    bg-dark-content 
+    rounded-5 
+    mt-2.5 
+    ml-2.5 
+    shadow-light-gray-bottom 
+    pt-2.5 
+    pl-2.5;
 
     .filtres-title {
-       text-align: center;
-       color: #FFFFFF;
-       font-size: 20px;
-       margin-bottom: 34px;
+        @apply text-center text-white text-5 mb-8.5;
     }
 
     .filters {
-        overflow-y: scroll;
-        height: 100%;
+        @apply overflow-y-scroll h-full;
     }
-}
-
-.padding-state {
- // padding: 10px 0 0 10px !important;
 }
