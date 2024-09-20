@@ -6,7 +6,7 @@ export class Character {
    characterPicture: CharacterPicture;
    weapon: string;
    rarety: string;
-   location: string;
+   region: string;
    color: string;
    weaponPicture: WeaponPicture;
    elementPicture: ElementPicture;

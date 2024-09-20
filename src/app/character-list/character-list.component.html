@@ -28,6 +28,7 @@
           
             <div class="characters-card-content custom-scrollbar">
                 <mat-card class="character" *ngFor="let character of newCharactersList"
+                   
                     [ngStyle]="{'box-shadow': '0 4px 0px 0px' + character.color}">
                     <div [ngClass]="{'transparent-filter': character._id === characterId}"
                     *ngIf="character._id === characterId">
@@ -44,7 +45,7 @@
                             <div class="weapons-picture">
                                 <img [src]="character.weaponPicture.url" [alt]="character.weaponPicture.alt">
                             </div>
-                            <div class="character-picture" [ngClass]="{'picture-custom': character._id === characterId}">
+                            <div class="character-picture" [ngClass]="{'picture-custom': character._id === characterId}"  (click)="characterSelected(character)">
                                 <img [src]="character.characterPicture.url" [alt]="character.characterPicture.alt">
                             </div>
                             <div class="element-picture">

@@ -147,7 +147,7 @@ export class CharactersFilterComponent implements OnInit, AfterViewInit {
 
   public searchArray(array: any, obj: any, key: any): boolean {
     if (Array.isArray(array)) {
-      return array.includes(obj[key])
+      return array.includes(obj[key].toLowerCase())
     }
     return array
   }

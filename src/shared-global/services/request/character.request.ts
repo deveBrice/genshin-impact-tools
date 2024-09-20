@@ -19,9 +19,15 @@ export class CharacterRequest {
     
     constructor(private httpClient: HttpClient, private authService: AuthService) { }
 
-    public create(character: Character) {
+    public create(character: Character, filesSettings: any) {
         const characterData = new FormData();
-        characterData.set('character', JSON.stringify(character))
+        const files: Array<File> = filesSettings.files;
+        const fieldName: any[] = filesSettings.fieldName;
+        for(let i = 0; i < files.length; i++) {
+            characterData.append(fieldName[i], files[i])
+        }
+
+        characterData.append('character', JSON.stringify(character))
         return this.httpClient.post(this.api_create_character_url, characterData, {
             observe: 'body',
         })
@@ -53,10 +59,15 @@ export class CharacterRequest {
         });
     }
 
-    public uploadPicture(destination: string, file: File) {
+    public uploadPicture(filesSettings: any) {
         const pictureData = new FormData();
-        pictureData.set('destination', destination)
-        pictureData.set('image', file)
+        const files: Array<File> = filesSettings.files;
+        const fieldName: any[] = filesSettings.fieldName;
+        for(let i = 0; i < files.length; i++) {
+            pictureData.append(fieldName[i], files[i])
+        }
+        console.log(filesSettings)
+    
         this.httpClient.post(this.api_upload_picture_url, pictureData).subscribe((res) => {
             console.log(res)
         })

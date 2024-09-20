@@ -21,7 +21,8 @@ import { LocationFilterComponent } from './location-filter/location-filter.compo
 import { UpdateCharacterComponent } from './update-character/update-character.component';
 import { CharactersManagerListComponent } from './characters-manager-list/characters-manager-list.component';
 import { RGBA } from 'src/shared-global/pipes/rgba.pipe';
-
+import { CharacterDetails } from 'src/shared-global/services/models/character-details.model';
+import { CharacterDetailsComponent } from './character-details/character-details.component';
 const routes: Routes = [
   {path: '', redirectTo: 'Accueil', pathMatch: 'full'},
   {path: "Accueil", component: HomeComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: "Théorycraft", component: HomeComponent},
   {path: "Ajouter_un_personnage", component: AddCharacterComponent },
   {path: "Modifier_un_personnage/:id", component: UpdateCharacterComponent },
+  {path: "Details_du_personnage/:id", component: CharacterDetailsComponent},
   {path: "Inscription", component: SignUpComponent},
   {path: "Connexion", component: SignInComponent},
   {path: "Account", component: AccountComponent},
