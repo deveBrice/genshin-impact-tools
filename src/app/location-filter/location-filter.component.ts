@@ -47,7 +47,7 @@ export class LocationFilterComponent implements OnInit {
         }
      })
 
-     const citiesResult = this.citiesList.filter((c) => c.checked).map((res) => res.name);
+     const citiesResult = this.citiesList.filter((c) => c.checked).map((res) => res.name.toLowerCase());
      this.emitCities.emit(citiesResult);
   }
 

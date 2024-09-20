@@ -29,7 +29,8 @@ export class CharactersManagerListComponent implements OnInit {
   public path: string = "";
   public requestTitle: string = "";
   public buttonTitle: string = "";
- public requestData: any;
+  public requestData: any;
+  public filesSettings: any = {files: [], fieldName: []}
 
 
   public raretiesList: string[] = [
@@ -38,7 +39,7 @@ export class CharactersManagerListComponent implements OnInit {
   ]
 
   public locationsList: string[] = [
-    "Mondstadts",
+    "Mondstadt",
     "Liyue",
     "Inazuma",
     "Sumeru",
@@ -89,7 +90,7 @@ export class CharactersManagerListComponent implements OnInit {
         }),
         weapon: ['', Validators.required],
         rarety: ['', Validators.required],
-        location: ['', Validators.required],
+        region: ['', Validators.required],
         color: ['', Validators.required],
         weaponPicture: this.fb.group({
           url: ['', Validators.required],
@@ -123,31 +124,49 @@ export class CharactersManagerListComponent implements OnInit {
 
   uploadPicture(event, fieldName: string) {
     let reader = new FileReader(); // HTML5 FileReader API
-    const file = event.target.files[0];
+    const file: File = event.target.files[0];
     this.file = file;
-
+    const pictureList = {
+      character: null,
+      weapon: null,
+      element: null
+    }
     if (event.target.files && event.target.files[0]) {
       reader.readAsDataURL(file);
       switch (fieldName) {
         case 'characters':
-          reader.onload = () => { this.currentCharacter = reader.result }
-       
           this.charactersManagerForm.patchValue({ characterPicture: { url: file.name, alt: '' } });
-          // this.characterRequest.uploadPicture('characters', file)
+          this.filesSettingUpdate(file, fieldName)
+          reader.onload = () => { this.currentCharacter = reader.result }
           break;
         case 'weapons':
-          reader.onload = () => { this.weaponsImage = reader.result }
           this.charactersManagerForm.patchValue({ weaponPicture: { url: file.name, alt: '' } });
-          //this.characterRequest.uploadPicture('weapons', file)
+          this.filesSettingUpdate(file, fieldName)
           break;
         case 'elements':
-          reader.onload = () => { this.elementImage = reader.result }
           this.charactersManagerForm.patchValue({ elementPicture: { url: file.name, alt: '' } });
-          // this.characterRequest.uploadPicture('elements', file)
+          this.filesSettingUpdate(file, fieldName)
           break;
       }
     }
   }
+
+  public filesSettingUpdate(file: File, fieldName: string) {
+    
+    const check = this.filesSettings.fieldName.map((res: string) => res).indexOf(fieldName)
+    if(check === - 1) {
+      const cutex = file.name.substring(0, 4)
+      
+      console.log(file)
+      this.filesSettings.files.push(file)
+      this.filesSettings.fieldName.push(fieldName)
+    } else {
+      this.filesSettings.files.splice(check, 1, file)
+      this.filesSettings.fieldName.splice(check, 1, fieldName)
+    }
+  }
+
+
 
 
   public editFileName(file: File, path: string): File {
@@ -193,7 +212,9 @@ export class CharactersManagerListComponent implements OnInit {
     character = this.charactersManagerForm.value;
     switch (this.requestData.requestType) {
       case "add":
-        this.characterRequest.create(character).subscribe();
+        console.log(character)
+        this.characterRequest.create(character, this.filesSettings).subscribe();
+       // this.characterRequest.uploadPicture(this.filesSettings);
         break;
         case "update":
         this.characterRequest.update(character, this.requestData.id).subscribe();
@@ -201,7 +222,7 @@ export class CharactersManagerListComponent implements OnInit {
     }
     
     this.filesToUpload = [];
-    this.location.back();
+   // this.location.back();
   }
 
   ngOnDestroy(): void {

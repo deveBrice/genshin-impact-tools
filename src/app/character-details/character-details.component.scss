@@ -1,0 +1,7 @@
+.character-details-container {
+    @apply h-full flex justify-center;
+    border: 2px solid red;
+    .character-details-content {
+        @apply w-200 h-125 bg-dark-content rounded-5 mt-7.5;
+    }
+}

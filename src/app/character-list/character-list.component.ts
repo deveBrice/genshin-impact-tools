@@ -5,6 +5,7 @@ import { Observable, Subscription, of } from 'rxjs';
 import { Character } from 'src/shared-global/services/models/character.model';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-character-list',
   templateUrl: './character-list.component.html',
@@ -157,6 +158,10 @@ export class CharacterListComponent implements OnInit, OnDestroy {
       this.charactersList = charactersList;
       this.newCharactersList = charactersList;
     })
+  }
+
+  public characterSelected(character: Character) {
+     this.router.navigate(['Details_du_personnage', character._id])
   }
 
 
