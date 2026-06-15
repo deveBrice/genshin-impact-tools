@@ -18,7 +18,7 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 export class WeaponFilterComponent implements OnInit {
 
-  public weaponFilterForm: FormGroup;
+ /* public weaponFilterForm: FormGroup;
   public idx: number;
   public checked: boolean;
   public arrowState: string = "arrow-down";
@@ -33,14 +33,14 @@ export class WeaponFilterComponent implements OnInit {
 
   @Output() emitweapons: EventEmitter<any[]> = new EventEmitter<any[]>();
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) { }*/
 
   ngOnInit(): void {
-    this.displayWeaponForm();
-    this.createWeaponsControl();
+    /*this.displayWeaponForm();
+    this.createWeaponsControl();*/
   }
 
-  public displayWeaponForm() {
+ /* public displayWeaponForm() {
      this.weaponFilterForm = this.fb.group({
        weapons: this.fb.array([])
      })
@@ -79,5 +79,5 @@ export class WeaponFilterComponent implements OnInit {
 
   public rotateArrow() {
     this.arrowState = this.arrowState === "arrow-down" ? "arrow-up" : "arrow-down"
- }
+ }*/
 }

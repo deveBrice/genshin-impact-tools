@@ -11,19 +11,19 @@ import { Subscription } from 'rxjs';
 
 export class NavigationComponent implements OnInit {
 
-  public sideMenu: any[] = [];
+/*  public sideMenu: any[] = [];
 
   public authResult: boolean;
   public pseudo: string = '';
   public subscription: Subscription;
   
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) {}*/
 
   ngOnInit(): void {
-     this.userState();
+    // this.userState();
   }
 
-  public routerList: any[] = [
+ /* public routerList: any[] = [
     {name: "Accueil", path: "/Accueil", icon: "assets/imgs/home-icon.png"},
     {name: "Personnages", path: "/Personnages", icon: "assets/imgs/character-icon.png"},
     {name: "Armes", path: "/Armes", icon: "assets/imgs/weapon-icon.png"},
@@ -58,5 +58,5 @@ export class NavigationComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
-  }
+  }*/
 }

@@ -81,9 +81,9 @@
 
 
 
-.file-input-custom {
+/*.file-input-custom {
   
-    ::file-selector-button {/* font-size: initial; */}
+    ::file-selector-button { font-size: initial; }
     
         .upload-picture {
             @apply h-10 
@@ -113,7 +113,7 @@
             }
           }
 
-          input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
+          input[type=file]::-webkit-file-upload-button { 
             @apply cursor-pointer;
          }
-}
+}*/

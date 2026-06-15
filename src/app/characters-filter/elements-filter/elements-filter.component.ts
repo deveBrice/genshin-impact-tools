@@ -19,10 +19,10 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 export class ElementsFilterComponent implements OnInit {
 
-  @Input() public characterList: any[];
+ // @Input() public characterList: any[];
   @Output() public elementCheckboxState: EventEmitter<FormArray<any>> = new EventEmitter<FormArray<any>>(); 
 
-  public elementFilterForm: FormGroup;
+  //public elementFilterForm: FormGroup;
   public elements: string[] = [];
   public elementToggle: boolean = true;
   public arrowState: string = "arrow-down";
@@ -41,9 +41,9 @@ export class ElementsFilterComponent implements OnInit {
   constructor(public fb: FormBuilder) { }
 
   ngOnInit(): void {
-     this.displayCharacterFilter();
+    /* this.displayCharacterFilter();
      this.createElementForm();
-     this.elementCheckboxChange();
+     this.elementCheckboxChange();*/
   }
 
   public toggleFilter() {
@@ -52,17 +52,17 @@ export class ElementsFilterComponent implements OnInit {
   }
 
   public displayCharacterFilter() {
-     this.elementFilterForm = this.fb.group({
+     /*this.elementFilterForm = this.fb.group({
         elements: this.fb.array([])
-     })
+     })*/
   }
 
 
-  public get elementsArray(): FormArray {
-    return this.elementFilterForm.get('elements') as FormArray
-  }
+ /* public get elementsArray(): FormArray {
+   // return this.elementFilterForm.get('elements') as FormArray
+  }*/
 
-  public createElementForm() {
+ /* public createElementForm() {
    this.elementsList.filter((res: any) => {
      this.elementsArray.push(
        this.fb.group({
@@ -72,9 +72,9 @@ export class ElementsFilterComponent implements OnInit {
      );
    });
    return this.elementsArray;
- }
+ }*/
 
-  public elementCheckboxChange() {
+  /*public elementCheckboxChange() {
   //  this.elementCheckboxState.emit(this.elementsArray);
     this.elementsArray.valueChanges.subscribe((res) => {
  
@@ -82,7 +82,7 @@ export class ElementsFilterComponent implements OnInit {
   
       this.elementCheckboxState.emit(elementsResult);
     })
-  }
+  }*/
 
   public rotateArrow() {
      this.arrowState = this.arrowState === "arrow-down" ? "arrow-up" : "arrow-down"

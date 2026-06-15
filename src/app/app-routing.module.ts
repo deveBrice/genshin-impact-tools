@@ -24,7 +24,7 @@ import { RGBA } from 'src/shared-global/pipes/rgba.pipe';
 import { CharacterDetails } from 'src/shared-global/services/models/character-details.model';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 const routes: Routes = [
-  {path: '', redirectTo: 'Accueil', pathMatch: 'full'},
+ /* {path: '', redirectTo: 'Accueil', pathMatch: 'full'},
   {path: "Accueil", component: HomeComponent},
   {path: "Personnages", component: CharacterListComponent},
   {path: "Armes", component: HomeComponent},
@@ -37,17 +37,17 @@ const routes: Routes = [
   {path: "Inscription", component: SignUpComponent},
   {path: "Connexion", component: SignInComponent},
   {path: "Account", component: AccountComponent},
-  {path: '**', redirectTo: 'Accueil', pathMatch: 'full'},
+  {path: '**', redirectTo: 'Accueil', pathMatch: 'full'},*/
 ];
 
 @NgModule({
   imports: [
-    SharedGlobalModule,
+   /* SharedGlobalModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes),*/
   ],
-  declarations: [NavigationComponent, 
+  declarations: [/*NavigationComponent, 
                  HomeComponent, 
                  CharacterListComponent, 
                  AddCharacterComponent, 
@@ -63,11 +63,11 @@ const routes: Routes = [
                  WeaponFilterComponent,
                  LocationFilterComponent,
                  CharactersManagerListComponent,
-                 RGBA
+                 RGBA*/
                 ],
-  exports: [RouterModule, 
+  exports: [/*RouterModule, 
             NavigationComponent, 
-            SharedGlobalModule
+            SharedGlobalModule*/
            ],
            providers: []
 

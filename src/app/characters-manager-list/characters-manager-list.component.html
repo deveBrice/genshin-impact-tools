@@ -7,7 +7,7 @@
             <img *ngIf="currentCharacter" [src]="currentCharacter" class="image">
         </div>
         <div class="add-character-form input-custom">
-            <form [formGroup]="charactersManagerForm" (ngSubmit)="characterManagerSubmit()" autocomplete="off" novalidate>
+            <!--<form [formGroup]="charactersManagerForm" (ngSubmit)="characterManagerSubmit()" autocomplete="off" novalidate>
                 <div class="numero-form-field">
                     <mat-form-field>
                         <mat-label>Numéro</mat-label>
@@ -111,7 +111,7 @@
                     <button type="submit" mat-raised-button [ngClass]="charactersManagerForm.valid ? 'custom-button' : ''"
                         [disabled]="!charactersManagerForm.valid">{{ buttonTitle }}</button>
                 </div>
-            </form>
+            </form>-->
         </div>
     </div>
 </div>
