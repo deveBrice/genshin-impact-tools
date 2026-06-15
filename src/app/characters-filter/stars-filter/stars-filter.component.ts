@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, ViewChild, ViewChildren, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
@@ -14,6 +14,7 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
             transition("arrow-down => arrow-up", animate("300ms ease-in"))
         ])
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 

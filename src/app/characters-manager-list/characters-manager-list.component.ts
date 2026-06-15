@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, OnDestroy, Input } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, OnDestroy, Input, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CharacterRequest } from 'src/shared-global/services/request/character.request';
 import { AuthService } from 'src/shared-global/services/auth/auth.service';
@@ -10,6 +10,7 @@ import { Location } from '@angular/common';
     selector: 'app-characters-manager-list',
     templateUrl: './characters-manager-list.component.html',
     styleUrls: ['./characters-manager-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class CharactersManagerListComponent implements OnInit {

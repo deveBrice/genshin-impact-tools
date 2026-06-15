@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { Observable, combineLatest, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,6 +8,7 @@ import { startWith } from 'rxjs/operators';
     selector: 'app-search-characters',
     templateUrl: './search-characters.component.html',
     styleUrls: ['./search-characters.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 

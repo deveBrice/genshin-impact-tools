@@ -1,19 +1,22 @@
-import { Component, 
-         OnInit, 
-         Input, 
-         Output, 
-         EventEmitter, 
-         ViewChild, 
-         ElementRef, 
-         AfterViewInit,
-         ChangeDetectorRef
-        } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
     selector: 'app-characters-filter',
     templateUrl: './characters-filter.component.html',
     styleUrls: ['./characters-filter.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 

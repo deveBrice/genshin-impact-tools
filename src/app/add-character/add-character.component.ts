@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CharacterRequest } from 'src/shared-global/services/request/character.request';
 import { AuthService } from 'src/shared-global/services/auth/auth.service';
@@ -9,6 +9,7 @@ import { Character } from 'src/shared-global/services/models/character.model';
     selector: 'app-add-character',
     templateUrl: './add-character.component.html',
     styleUrls: ['./add-character.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AddCharacterComponent implements OnInit {

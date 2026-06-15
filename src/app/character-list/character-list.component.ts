@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { AuthService } from 'src/shared-global/services/auth/auth.service';
 import { CharacterRequest } from 'src/shared-global/services/request/character.request';
 import { Observable, Subscription, of } from 'rxjs';
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
     selector: 'app-character-list',
     templateUrl: './character-list.component.html',
     styleUrls: ['./character-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 

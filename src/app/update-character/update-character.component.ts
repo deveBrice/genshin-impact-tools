@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/shared-global/services/auth/auth.service';
 import { CharacterRequest } from 'src/shared-global/services/request/character.request';
@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
     selector: 'app-update-character',
     templateUrl: './update-character.component.html',
     styleUrls: ['./update-character.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class UpdateCharacterComponent implements OnInit {
