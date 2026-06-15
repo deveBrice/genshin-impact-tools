@@ -5,9 +5,10 @@ import { CharacterRequest } from 'src/shared-global/services/request/character.r
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-update-character',
-  templateUrl: './update-character.component.html',
-  styleUrls: ['./update-character.component.scss']
+    selector: 'app-update-character',
+    templateUrl: './update-character.component.html',
+    styleUrls: ['./update-character.component.scss'],
+    standalone: false
 })
 export class UpdateCharacterComponent implements OnInit {
   public subscription: Subscription;

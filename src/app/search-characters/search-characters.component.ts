@@ -5,9 +5,10 @@ import { map } from 'rxjs/operators';
 import { startWith } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-search-characters',
-  templateUrl: './search-characters.component.html',
-  styleUrls: ['./search-characters.component.scss']
+    selector: 'app-search-characters',
+    templateUrl: './search-characters.component.html',
+    styleUrls: ['./search-characters.component.scss'],
+    standalone: false
 })
 
 export class SearchCharactersComponent implements OnInit {

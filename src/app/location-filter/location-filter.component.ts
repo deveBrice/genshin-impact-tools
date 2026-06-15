@@ -3,17 +3,18 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-location-filter',
-  templateUrl: './location-filter.component.html',
-  styleUrls: ['./location-filter.component.scss'],
-  animations: [
-    trigger("rotatedState", [
-      state("arrow-down", style({ transform: "rotate(0)" })),
-      state("arrow-up", style({ transform: "rotate(180deg)" })),
-       transition('arrow-up => arrow-down', animate('300ms ease-out')),
-       transition("arrow-down => arrow-up", animate("300ms ease-in"))
-    ])
-  ]
+    selector: 'app-location-filter',
+    templateUrl: './location-filter.component.html',
+    styleUrls: ['./location-filter.component.scss'],
+    animations: [
+        trigger("rotatedState", [
+            state("arrow-down", style({ transform: "rotate(0)" })),
+            state("arrow-up", style({ transform: "rotate(180deg)" })),
+            transition('arrow-up => arrow-down', animate('300ms ease-out')),
+            transition("arrow-down => arrow-up", animate("300ms ease-in"))
+        ])
+    ],
+    standalone: false
 })
 
 export class LocationFilterComponent implements OnInit {

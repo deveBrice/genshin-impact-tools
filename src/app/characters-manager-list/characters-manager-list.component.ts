@@ -7,9 +7,10 @@ import { Character } from 'src/shared-global/services/models/character.model';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-characters-manager-list',
-  templateUrl: './characters-manager-list.component.html',
-  styleUrls: ['./characters-manager-list.component.scss']
+    selector: 'app-characters-manager-list',
+    templateUrl: './characters-manager-list.component.html',
+    styleUrls: ['./characters-manager-list.component.scss'],
+    standalone: false
 })
 export class CharactersManagerListComponent implements OnInit {
 

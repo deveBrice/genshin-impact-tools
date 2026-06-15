@@ -5,9 +5,10 @@ import { PasswordValidator } from 'src/shared-global/services/Validators/passwor
 import { AuthService } from 'src/shared-global/services/auth/auth.service';
 
 @Component({
-  selector: 'app-account',
-  templateUrl: './account.component.html',
-  styleUrls: ['./account.component.scss']
+    selector: 'app-account',
+    templateUrl: './account.component.html',
+    styleUrls: ['./account.component.scss'],
+    standalone: false
 })
 
 export class AccountComponent implements OnInit, OnChanges {

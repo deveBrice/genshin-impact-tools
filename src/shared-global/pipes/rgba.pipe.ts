@@ -1,7 +1,8 @@
 import {PipeTransform,Pipe} from '@angular/core'
 
 @Pipe({
-  name:'rgba'
+    name: 'rgba',
+    standalone: false
 })
 
 export class RGBA implements PipeTransform{

@@ -6,9 +6,10 @@ import { Subscription } from 'rxjs';
 import { Character } from 'src/shared-global/services/models/character.model';
 
 @Component({
-  selector: 'app-add-character',
-  templateUrl: './add-character.component.html',
-  styleUrls: ['./add-character.component.scss']
+    selector: 'app-add-character',
+    templateUrl: './add-character.component.html',
+    styleUrls: ['./add-character.component.scss'],
+    standalone: false
 })
 export class AddCharacterComponent implements OnInit {
 

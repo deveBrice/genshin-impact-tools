@@ -3,18 +3,18 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, 
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
-  selector: 'app-stars-filter',
-  templateUrl: './stars-filter.component.html',
-  styleUrls: ['./stars-filter.component.scss'],
-  animations: [
-   
-    trigger("rotatedState", [
-      state("arrow-down", style({ transform: "rotate(0)" })),
-      state("arrow-up", style({ transform: "rotate(180deg)" })),
-       transition('arrow-up => arrow-down', animate('300ms ease-out')),
-       transition("arrow-down => arrow-up", animate("300ms ease-in"))
-    ])
-  ]
+    selector: 'app-stars-filter',
+    templateUrl: './stars-filter.component.html',
+    styleUrls: ['./stars-filter.component.scss'],
+    animations: [
+        trigger("rotatedState", [
+            state("arrow-down", style({ transform: "rotate(0)" })),
+            state("arrow-up", style({ transform: "rotate(180deg)" })),
+            transition('arrow-up => arrow-down', animate('300ms ease-out')),
+            transition("arrow-down => arrow-up", animate("300ms ease-in"))
+        ])
+    ],
+    standalone: false
 })
 
 export class StarsFilterComponent implements OnInit {

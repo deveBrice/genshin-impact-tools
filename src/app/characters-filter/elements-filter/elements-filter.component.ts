@@ -3,18 +3,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-elements-filter',
-  templateUrl: './elements-filter.component.html',
-  styleUrls: ['./elements-filter.component.scss'],
-  animations: [
-   
-    trigger("rotatedState", [
-      state("arrow-down", style({ transform: "rotate(0)" })),
-      state("arrow-up", style({ transform: "rotate(180deg)" })),
-       transition('arrow-up => arrow-down', animate('300ms ease-out')),
-       transition("arrow-down => arrow-up", animate("300ms ease-in"))
-    ])
-  ]
+    selector: 'app-elements-filter',
+    templateUrl: './elements-filter.component.html',
+    styleUrls: ['./elements-filter.component.scss'],
+    animations: [
+        trigger("rotatedState", [
+            state("arrow-down", style({ transform: "rotate(0)" })),
+            state("arrow-up", style({ transform: "rotate(180deg)" })),
+            transition('arrow-up => arrow-down', animate('300ms ease-out')),
+            transition("arrow-down => arrow-up", animate("300ms ease-in"))
+        ])
+    ],
+    standalone: false
 })
 
 export class ElementsFilterComponent implements OnInit {

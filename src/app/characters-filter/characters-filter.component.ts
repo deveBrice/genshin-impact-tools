@@ -11,9 +11,10 @@ import { Component,
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
-  selector: 'app-characters-filter',
-  templateUrl: './characters-filter.component.html',
-  styleUrls: ['./characters-filter.component.scss']
+    selector: 'app-characters-filter',
+    templateUrl: './characters-filter.component.html',
+    styleUrls: ['./characters-filter.component.scss'],
+    standalone: false
 })
 
 export class CharactersFilterComponent implements OnInit, AfterViewInit {
