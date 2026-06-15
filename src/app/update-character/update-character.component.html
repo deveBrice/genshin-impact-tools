@@ -1,3 +1,5 @@
-<div class="characters-manager-content" *ngIf="authResult">
+@if (authResult) {
+  <div class="characters-manager-content">
     <app-characters-manager-list [charactersForm]="updateCharacterData"></app-characters-manager-list>
-</div>
+  </div>
+}
