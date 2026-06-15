@@ -1,9 +1,9 @@
 <div class="cities-filter-content">
     <div class="filter-title">
         <h2>Régions</h2>
-        <mat-icon [@rotatedState]='arrowState' (click)="rotateArrow()">arrow_circle_down</mat-icon>
+        <!--<mat-icon [@rotatedState]='arrowState' (click)="rotateArrow()">arrow_circle_down</mat-icon>-->
     </div>
-    <div class="cities-filter-form" [ngClass]="arrowState === 'arrow-down' ? 'displayLocationFilter' : 'hideLocationFilter'">
+    <!--<div class="cities-filter-form" [ngClass]="arrowState === 'arrow-down' ? 'displayLocationFilter' : 'hideLocationFilter'">
         <div class="cities-list" 
              *ngFor="let cities of citiesList; let i = index" 
              (click)="citySelected(i, cities.checked)"
@@ -11,5 +11,5 @@
             <img [src]="cities.logo" alt="cities.name">
             <p>{{ cities.name }}</p>
         </div>
-    </div>
+    </div>-->
 </div>

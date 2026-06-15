@@ -19,21 +19,21 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 export class StarsFilterComponent implements OnInit {
 
-  public starsFilterForm: FormGroup;
+  /*public starsFilterForm: FormGroup;
   public isChecked: boolean = false;
   public index: number;
   public starsName: string = 'fourStars';
-  public arrowState: string = "arrow-down";
+  public arrowState: string = "arrow-down";*/
 
   @Output() public starsCheckboxState: EventEmitter<string[]> = new EventEmitter<string[]>()
-  @ViewChildren('select') select: QueryList<ElementRef>;;
+  //@ViewChildren('select') select: QueryList<ElementRef>;;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.displayStarsFilterForm();
+   /* this.displayStarsFilterForm();
     this.createStarsControl();
-    this.starsChange();
+    this.starsChange();*/
   }
 
   public starsList: any[] = [
@@ -42,16 +42,16 @@ export class StarsFilterComponent implements OnInit {
   ]
 
   public displayStarsFilterForm() {
-    this.starsFilterForm = this.fb.group({
+   /* this.starsFilterForm = this.fb.group({
       stars: this.fb.array([])
-    })
+    })*/
   }
 
-  public get starsArray() {
-    return this.starsFilterForm.get("stars") as FormArray;
-  }
+  /*public get starsArray() {
+   return this.starsFilterForm.get("stars") as FormArray;
+  }*/
 
-  public createStarsControl() {
+  /*public createStarsControl() {
     this.starsList.filter((s: any) => {
       this.starsArray.push(
         this.fb.group({
@@ -62,22 +62,22 @@ export class StarsFilterComponent implements OnInit {
       )
     })
     return this.starsArray
-  }
+  }*/
 
   public toggleCheckboxAll(index: number, starsList: any[]) {
 
   }
 
   public starsChange() {
-    this.starsFilterForm.controls['stars'].valueChanges.subscribe((s) => {
+   /* this.starsFilterForm.controls['stars'].valueChanges.subscribe((s) => {
       const starssResult = s.filter((b: any) => b.checked).map((s: any) => s.logo)
       this.starsCheckboxState.emit(starssResult)
-    })
+    })*/
 
   }
 
   public rotateArrow() {
-    this.arrowState = this.arrowState === "arrow-down" ? "arrow-up" : "arrow-down"
+   // this.arrowState = this.arrowState === "arrow-down" ? "arrow-up" : "arrow-down"
  }
 
 

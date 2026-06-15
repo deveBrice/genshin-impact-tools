@@ -13,7 +13,7 @@ import { AuthService } from 'src/shared-global/services/auth/auth.service';
 export class AccountComponent implements OnInit, OnChanges {
 
   @Input() public account: any = {};
-  public accountForm: FormGroup;
+  //public accountForm: FormGroup;
   public formName: any = {};
   
   constructor(private fb: FormBuilder, 
@@ -28,15 +28,15 @@ export class AccountComponent implements OnInit, OnChanges {
     switch(accountSetting.name){
       case'signUp':
         this.formName = accountSetting.name;
-        this.accountForm = this.fb.group(
+        /*this.accountForm = this.fb.group(
           accountSetting.signUpForm, 
           {validator: this.passwordValidator.confirmPasswordValidator("password", "confirmPassword")
-        });
+        });*/
         this.inputValidator(accountSetting.signUpForm)
         break;
       case 'signIn':
         this.formName = accountSetting.name;
-        this.accountForm = this.fb.group(accountSetting.signInForm);
+       // this.accountForm = this.fb.group(accountSetting.signInForm);
         this.inputValidator(accountSetting.signInForm)
         break;
     }
@@ -48,10 +48,10 @@ export class AccountComponent implements OnInit, OnChanges {
   }
 
   public inputValidator(formControl: any) {
-      for(let fc in formControl) {
+    /*  for(let fc in formControl) {
         this.accountForm.get(fc)?.setValidators([Validators.required]);
         this.accountForm.updateValueAndValidity();
-      }
+      }*/
   }
 
   public signIn() {
@@ -65,13 +65,13 @@ export class AccountComponent implements OnInit, OnChanges {
   public validateForm() {
     switch(this.formName) {
        case 'signUp':
-        console.log(this.accountForm)
+       /* console.log(this.accountForm)
         delete this.accountForm.value['confirmPassword'];
-       this.authService.createUser(this.accountForm.value).subscribe();
+       this.authService.createUser(this.accountForm.value).subscribe();*/
         break;
         case 'signIn':
-        console.log(this.accountForm)
-        this.authService.loginUser(this.accountForm.value)
+        /*console.log(this.accountForm)
+        this.authService.loginUser(this.accountForm.value)*/
         break;
     }
   }

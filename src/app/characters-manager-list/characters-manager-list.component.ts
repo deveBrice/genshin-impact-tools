@@ -13,16 +13,16 @@ import { Location } from '@angular/common';
 })
 export class CharactersManagerListComponent implements OnInit {
 
-  @ViewChild('inputUploadPicture', { static: false }) pRef: ElementRef;
-  public addCharacterForm: FormGroup;
-  public charactersManagerForm: FormGroup;
+  //@ViewChild('inputUploadPicture', { static: false }) pRef: ElementRef;
+ // public addCharacterForm: FormGroup;
+ // public charactersManagerForm: FormGroup;
   public imageUrl: any;
-  public fieldName: string;
+  //public fieldName: string;
   public currentCharacter: any;
   public weaponsImage: any;
   public elementImage: any;
-  public authResult: boolean;
-  public subscription: Subscription;
+ // public authResult: boolean;
+ // public subscription: Subscription;
   public file: any;
   public arrayFile: any[] = [];
   public filesToUpload: Array<File> = [];
@@ -76,10 +76,10 @@ export class CharactersManagerListComponent implements OnInit {
 
   ngOnInit(): void {
     this.userState();
-    this.displayCharacterForm();
+   // this.displayCharacterForm();
   }
 
-    public displayCharacterForm() {
+   /* public displayCharacterForm() {
       this.charactersManagerForm = this.fb.group({
         num: [''],
         name: ['', Validators.required],
@@ -101,7 +101,7 @@ export class CharactersManagerListComponent implements OnInit {
           alt: ['', Validators.required]
         })
       });
-    }
+    }*/
 
     
   public requestManager(requestData: any) {
@@ -113,7 +113,7 @@ export class CharactersManagerListComponent implements OnInit {
         break;
       case "update":
         this.requestTitle = "Modifier le personnage";
-        this.charactersManagerForm.patchValue(requestData.data);
+       // this.charactersManagerForm.patchValue(requestData.data);
         this.currentCharacter = requestData.data.characterPicture.url;
         this.buttonTitle = "Modifier";
       default:
@@ -122,7 +122,7 @@ export class CharactersManagerListComponent implements OnInit {
   }
 
 
-  uploadPicture(event, fieldName: string) {
+  /*uploadPicture(event, fieldName: string) {
     let reader = new FileReader(); // HTML5 FileReader API
     const file: File = event.target.files[0];
     this.file = file;
@@ -149,7 +149,7 @@ export class CharactersManagerListComponent implements OnInit {
           break;
       }
     }
-  }
+  }*/
 
   public filesSettingUpdate(file: File, fieldName: string) {
     
@@ -201,13 +201,13 @@ export class CharactersManagerListComponent implements OnInit {
 
 
   public userState() {
-    this.subscription = this.authService.authChanged.subscribe((auth: boolean) => {
+   /* this.subscription = this.authService.authChanged.subscribe((auth: boolean) => {
       console.log(auth)
       this.authResult = auth;
-    })
+    })*/
   }
 
-  public characterManagerSubmit() {
+ /* public characterManagerSubmit() {
     let character = new Character();
     character = this.charactersManagerForm.value;
     switch (this.requestData.requestType) {
@@ -223,10 +223,10 @@ export class CharactersManagerListComponent implements OnInit {
     
     this.filesToUpload = [];
    // this.location.back();
-  }
+  }*/
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+   // this.subscription.unsubscribe();
   }
 
 }

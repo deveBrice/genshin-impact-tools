@@ -14,13 +14,13 @@ import { Router } from '@angular/router';
 
 export class CharacterListComponent implements OnInit, OnDestroy {
 
-  public authResult: boolean;
+  /*public authResult: boolean;
   public subscription: Subscription;
   public charactersList: any[] = [];
   public charactersSearch: string;
   public newCharactersList: any[] = [];
   public deleteState: boolean = false;
-  public characterId: string;
+  public characterId: string;*/
 
   constructor(public authService: AuthService, 
               private characterRequest: CharacterRequest,
@@ -147,17 +147,17 @@ export class CharacterListComponent implements OnInit, OnDestroy {
   ]*/
 
   public userState() {
-    this.subscription = this.authService.authChanged.subscribe((auth: boolean) => {
+   /* this.subscription = this.authService.authChanged.subscribe((auth: boolean) => {
       console.log(auth)
         this.authResult = auth;
-    })
+    })*/
   }
 
   public getCharacterList() {
-   this.characterRequest.read().subscribe((charactersList: Character[]) => {
+  /* this.characterRequest.read().subscribe((charactersList: Character[]) => {
       this.charactersList = charactersList;
       this.newCharactersList = charactersList;
-    })
+    })*/
   }
 
   public characterSelected(character: Character) {
@@ -167,12 +167,12 @@ export class CharacterListComponent implements OnInit, OnDestroy {
 
 
  public searchResult($event: Observable<string>) {
-    $event.subscribe(res => this.charactersSearch = res);
+  //  $event.subscribe(res => this.charactersSearch = res);
  }
 
  public characterFilterResult($event: any[]) {
  
-    this.newCharactersList = $event;
+    //this.newCharactersList = $event;
  }
 
  public updateCharacters(character: Character) {
@@ -181,18 +181,18 @@ export class CharacterListComponent implements OnInit, OnDestroy {
 
  public deleteCharacter(character: Character) {
  
-   this.characterId = character._id;
+   //this.characterId = character._id;
  }
 
  public accept() {
-  this.characterRequest.delete(this.characterId).subscribe();
+  //this.characterRequest.delete(this.characterId).subscribe();
  }
 
  public refuse() {
-    this.characterId = null;
+    //this.characterId = null;
  }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    //this.subscription.unsubscribe();
   }
 }

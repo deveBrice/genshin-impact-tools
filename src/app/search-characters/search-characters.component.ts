@@ -12,10 +12,10 @@ import { startWith } from 'rxjs/operators';
 
 export class SearchCharactersComponent implements OnInit {
 
-  public searchCharacter: FormControl;
+  /*public searchCharacter: FormControl;
   public searchCharacter$: Observable<string>;
   public mixedData$: Observable<any[]>
-  public charactersData$: Observable<any[]>;
+  public charactersData$: Observable<any[]>;*/
   
   @Output()
   public searchResult$: EventEmitter<Observable<string>> = new EventEmitter<Observable<string>>();
@@ -28,15 +28,15 @@ export class SearchCharactersComponent implements OnInit {
   }
 
   public charactersFilter() {
-    this.searchCharacter = new FormControl('');
-    this.searchCharacter$ = this.searchCharacter.valueChanges.pipe()
+  /*  this.searchCharacter = new FormControl('');
+    this.searchCharacter$ = this.searchCharacter.valueChanges.pipe()*/
 
    /* this.mixedData$ = combineLatest(charactersData$, this.searchCharacter$)
     .pipe(map(([charactersData, searchCharacter]) => charactersData.filter(res => 
       res.name.indexOf(searchCharacter) !== -1
     )))*/
    
-    this.searchResult$.emit(this.searchCharacter$);
+   // this.searchResult$.emit(this.searchCharacter$);
   }
 
 }

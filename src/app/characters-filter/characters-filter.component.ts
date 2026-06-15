@@ -22,8 +22,8 @@ export class CharactersFilterComponent implements OnInit, AfterViewInit {
   public filterState: boolean = false;
   public characters: any[] = [];
 
-  public elementsCheckbox: any[];
-  public multiFilterForm: FormGroup;
+  /*public elementsCheckbox: any[];
+  public multiFilterForm: FormGroup;*/
   public activeFilter: any = {}
   public filtersState: boolean = false;
   public paddingState: boolean = false;
@@ -49,7 +49,7 @@ export class CharactersFilterComponent implements OnInit, AfterViewInit {
   }
 
   @Output() public characterFilterResult: EventEmitter<any[]> = new EventEmitter<any[]>()
-  @ViewChild('scroll') input: ElementRef;
+  //@ViewChild('scroll') input: ElementRef;
 
 
   constructor(public fb: FormBuilder, private cdr: ChangeDetectorRef) {}
@@ -59,27 +59,27 @@ export class CharactersFilterComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    if(this.input.nativeElement.clientHeight < this.input.nativeElement.scrollHeight) {
+   /* if(this.input.nativeElement.clientHeight < this.input.nativeElement.scrollHeight) {
        this.paddingState = true;
     }
-    this.cdr.detectChanges();
+    this.cdr.detectChanges();*/
   }
 
   public displayMultiFilter() {
-    this.multiFilterForm = this.fb.group({
+    /*this.multiFilterForm = this.fb.group({
       element: this.fb.array([])
-    })
+    })*/
 
   }
 
-  public elementCheckboxState($event) {
+  /*public elementCheckboxState($event) {
 
     this.activeFilter['element'] = $event;
 
     this.filtersState = $event.length !== 0 ? false : true;
 
     this.removeFilter(this.filtersState, 'element')
-  }
+  }*/
 
   public starsCheckboxState($event: any[]) {
     this.activeFilter['rarety'] = $event;
@@ -124,8 +124,12 @@ export class CharactersFilterComponent implements OnInit, AfterViewInit {
 
   public filteredCharacter() {
     let characters = [...this._characters]
+     console.log(this.activeFilter)
     let newCharacterList = characters.filter(obj =>
+      
       Object.entries<any>(this.activeFilter).every(([prop, find]) => {
+        console.log(prop)
+        console.log(find)
         return this.searchText(find, obj, prop) &&
           this.searchArray(find, obj, prop)
       }
@@ -139,10 +143,12 @@ export class CharactersFilterComponent implements OnInit, AfterViewInit {
 
 
   public searchText(char: any, obj: any, key: any): boolean {
+    let result: boolean = false;
     if (typeof char === "string") {
-      return obj[key].includes(char)
+      result = obj[key].includes(char)
     }
-    return char
+    console.log(result)
+    return result
   }
 
   public searchArray(array: any, obj: any, key: any): boolean {
