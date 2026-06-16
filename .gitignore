@@ -59,4 +59,9 @@ Thumbs.db
 /src/assets/imgs/citiess
 /src/assets/imgs/logos
 
+# remove temp of project
+styles.txt
+tailwind.config.txt
+
+
 private.md
